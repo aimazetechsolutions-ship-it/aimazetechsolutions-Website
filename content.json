@@ -146,7 +146,7 @@
         "showMainImage": false,
         "showExtraImages": false,
         "showFloatingCards": false,
-        "image": "assets/odoo-erp-solution-post.png",
+        "image": "/assets/odoo-erp-solution-post.png",
         "imageAlt": "Odoo ERP solutions by AimAze Tech Solutions",
         "cardTitle": "ERP that fits your process",
         "cardText": "CRM, HR, finance, sales, inventory, training and support",
