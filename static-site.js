@@ -82,6 +82,30 @@ const pageMeta = {
   },
 };
 
+const defaultNavigation = [
+  { label: "Home", href: "index.html" },
+  { label: "About", href: "about.html" },
+  { label: "Services", href: "services.html" },
+  { label: "Odoo ERP", href: "odoo.html" },
+  { label: "Industries", href: "industries.html" },
+  { label: "Portfolio", href: "portfolio.html" },
+  { label: "Blog", href: "blog.html" },
+];
+
+const navHrefByLabel = {
+  home: "index.html",
+  about: "about.html",
+  services: "services.html",
+  "odoo erp": "odoo.html",
+  odoo: "odoo.html",
+  industries: "industries.html",
+  portfolio: "portfolio.html",
+  gallery: "portfolio.html",
+  blog: "blog.html",
+  insights: "blog.html",
+  contact: "contact.html",
+};
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -164,6 +188,7 @@ function renderTop(content) {
   const site = content.site || {};
   const topStrip = content.topStrip || {};
   const page = currentPage();
+  const navigation = normalizedNavigation(content);
   return `
     <div class="top-strip">
       <p>${escapeHtml(topStrip.text)}</p>
@@ -178,13 +203,27 @@ function renderTop(content) {
         <span></span><span></span><span></span>
       </button>
       <nav class="site-nav" data-nav>
-        ${(content.navigation || [])
+        ${navigation
           .map((item) => `<a class="${navIsActive(item.href, page) ? "is-active" : ""}" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`)
           .join("")}
         <a class="nav-cta ${page === "contact" ? "is-active" : ""}" href="contact.html">Contact Us</a>
       </nav>
     </header>
   `;
+}
+
+function normalizedNavigation(content) {
+  const nav = content.navigation?.length ? content.navigation : defaultNavigation;
+  return nav.map((item) => {
+    const label = String(item.label || "").trim();
+    const labelKey = label.toLowerCase();
+    const href = String(item.href || "").trim();
+    const shouldNormalize = !href || href.startsWith("#");
+    return {
+      label,
+      href: shouldNormalize ? navHrefByLabel[labelKey] || href || "index.html" : href,
+    };
+  });
 }
 
 function currentPage() {

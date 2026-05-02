@@ -59,7 +59,7 @@
       "Integrations and support"
     ],
     "primaryButton": { "label": "Talk to Us", "href": "#contact" },
-    "secondaryButton": { "label": "View Services", "href": "#services" },
+    "secondaryButton": { "label": "View Services", "href": "services.html" },
     "image": "assets/odoo-erp-solution-post.png",
     "imageAlt": "Odoo ERP solutions by AimAze Tech Solutions",
     "cardTitle": "ERP that fits your process",
