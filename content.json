@@ -8,6 +8,33 @@
     "email": "hello@aimazetechsolutions.com",
     "footerText": "AimAze Tech Solutions LLC. All rights reserved."
   },
+  "theme": {
+    "cyan": "#27c7d7",
+    "blue": "#3f83df",
+    "orange": "#ff8847",
+    "purple": "#70419a",
+    "ink": "#141b2c",
+    "text": "#344154",
+    "muted": "#6d7789",
+    "soft": "#f5fbfd"
+  },
+  "sections": {
+    "about": true,
+    "problems": true,
+    "platform": true,
+    "stats": true,
+    "services": true,
+    "industries": true,
+    "process": true,
+    "video": true,
+    "gallery": true,
+    "testimonials": true,
+    "caseStudies": true,
+    "blog": true,
+    "faq": true,
+    "contact": true,
+    "customSections": true
+  },
   "topStrip": {
     "text": "Free Odoo ERP consultation for growing businesses",
     "linkText": "Request analysis",
@@ -34,7 +61,11 @@
     "image": "assets/odoo-erp-solution-post.png",
     "imageAlt": "Odoo ERP solutions by AimAze Tech Solutions",
     "cardTitle": "ERP that fits your process",
-    "cardText": "CRM, HR, finance, sales, inventory, training and support"
+    "cardText": "CRM, HR, finance, sales, inventory, training and support",
+    "gallery": [
+      { "image": "assets/aimaze-coverpage.png", "alt": "AimAze Tech Solutions cover design" }
+    ],
+    "videoUrl": ""
   },
   "about": {
     "eyebrow": "About AimAze",
@@ -86,12 +117,12 @@
     "title": "Business technology solutions under one roof.",
     "copy": "From ERP to websites, we build systems that are useful, maintainable, and aligned with the way your team works.",
     "items": [
-      { "short": "ERP", "title": "Odoo ERP Implementation", "text": "Module planning, setup, workflows, access roles, reporting, migration and rollout." },
-      { "short": "DEV", "title": "Software Development", "text": "Custom web systems, APIs, portals, automation tools and internal platforms." },
-      { "short": "APP", "title": "Application Development", "text": "Business applications that help teams capture, process and act on information." },
-      { "short": "SF", "title": "Salesforce Cloud Development", "text": "Salesforce customization, automation, data models, reports and integrations." },
-      { "short": "IT", "title": "IT Management Solutions", "text": "Operational support, documentation, monitoring structure and system administration." },
-      { "short": "WEB", "title": "Website Development", "text": "Professional company websites, landing pages, campaigns and lead-generation pages." }
+      { "short": "ERP", "title": "Odoo ERP Implementation", "text": "Module planning, setup, workflows, access roles, reporting, migration and rollout.", "image": "", "videoUrl": "" },
+      { "short": "DEV", "title": "Software Development", "text": "Custom web systems, APIs, portals, automation tools and internal platforms.", "image": "", "videoUrl": "" },
+      { "short": "APP", "title": "Application Development", "text": "Business applications that help teams capture, process and act on information.", "image": "", "videoUrl": "" },
+      { "short": "SF", "title": "Salesforce Cloud Development", "text": "Salesforce customization, automation, data models, reports and integrations.", "image": "", "videoUrl": "" },
+      { "short": "IT", "title": "IT Management Solutions", "text": "Operational support, documentation, monitoring structure and system administration.", "image": "", "videoUrl": "" },
+      { "short": "WEB", "title": "Website Development", "text": "Professional company websites, landing pages, campaigns and lead-generation pages.", "image": "", "videoUrl": "" }
     ]
   },
   "industries": {
@@ -126,6 +157,59 @@
       { "question": "Can AimAze build my company website too?", "answer": "Yes. AimAze also builds professional websites and landing pages for businesses that need a clean online presence and lead-generation flow." }
     ]
   },
+  "video": {
+    "eyebrow": "Watch AimAze in action",
+    "title": "Add your company intro, demo, or client walkthrough video.",
+    "copy": "Use this section for an Odoo demo, company profile, service explanation, or short promotional video.",
+    "videoUrl": "",
+    "posterImage": "assets/aimaze-coverpage.png"
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "Visual highlights from our solutions and brand.",
+    "copy": "Add project screenshots, service visuals, team photos, marketing graphics, or product images.",
+    "items": [
+      { "title": "Odoo ERP Solutions", "text": "A practical ERP message for growing businesses.", "image": "assets/odoo-erp-solution-post.png", "alt": "Odoo ERP solution graphic" },
+      { "title": "AimAze Tech Solutions", "text": "Brand cover design and service overview.", "image": "assets/aimaze-coverpage.png", "alt": "AimAze cover page" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What clients can say about working with AimAze.",
+    "items": [
+      { "quote": "AimAze helped us think clearly about our business process before jumping into software.", "name": "Client Name", "role": "Operations Manager", "image": "" },
+      { "quote": "The team made ERP implementation feel structured, practical, and manageable.", "name": "Client Name", "role": "Business Owner", "image": "" }
+    ]
+  },
+  "caseStudies": {
+    "eyebrow": "Case studies",
+    "title": "Examples of business problems AimAze can solve.",
+    "items": [
+      { "title": "ERP process cleanup", "industry": "Trading and distribution", "summary": "Mapped sales, inventory, approvals, and finance into one connected workflow.", "result": "Cleaner reporting and fewer manual handovers.", "image": "" },
+      { "title": "Custom business application", "industry": "Professional services", "summary": "Built a central system to capture requests, assign tasks, and monitor progress.", "result": "Better visibility for management and faster team follow-up.", "image": "" }
+    ]
+  },
+  "blog": {
+    "eyebrow": "Insights",
+    "title": "News, guides, and practical technology notes.",
+    "items": [
+      { "title": "When should a business move to ERP?", "date": "2026-05-02", "category": "ERP", "excerpt": "A simple guide to signs that spreadsheets and disconnected tools are slowing down growth.", "image": "", "link": "" },
+      { "title": "Why Odoo works well for growing companies", "date": "2026-05-02", "category": "Odoo", "excerpt": "Odoo gives businesses a modular platform that can start small and expand over time.", "image": "", "link": "" }
+    ]
+  },
+  "customSections": [
+    {
+      "enabled": false,
+      "eyebrow": "Custom section",
+      "title": "Add any extra section you want.",
+      "copy": "Use custom sections for offers, team profiles, partnerships, events, downloads, or announcements.",
+      "image": "",
+      "videoUrl": "",
+      "items": [
+        { "title": "Custom item", "text": "Add supporting points, features, or details here." }
+      ]
+    }
+  ],
   "contact": {
     "eyebrow": "Request a free business process analysis",
     "title": "Ready to scale without operational chaos?",

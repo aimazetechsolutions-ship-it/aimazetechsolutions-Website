@@ -1,130 +1,42 @@
-const fallbackContent = {
+const defaultContent = {
   site: {
-    title: "AimAze Tech Solutions | Odoo ERP Implementation & Tech Solutions",
-    description:
-      "AimAze Tech Solutions helps businesses implement Odoo ERP, customize workflows, integrate systems, and build professional software, applications, Salesforce cloud solutions, IT management systems, and websites.",
+    title: "AimAze Tech Solutions",
+    description: "AimAze Tech Solutions provides Odoo ERP implementation and technology solutions.",
     domain: "https://aimazetechsolutions.com",
     logo: "assets/aimaze-logo-transparent.png",
     ogImage: "assets/aimaze-coverpage.png",
     email: "hello@aimazetechsolutions.com",
     footerText: "AimAze Tech Solutions LLC. All rights reserved.",
   },
-  topStrip: {
-    text: "Free Odoo ERP consultation for growing businesses",
-    linkText: "Request analysis",
-    linkHref: "#contact",
+  theme: {
+    cyan: "#27c7d7",
+    blue: "#3f83df",
+    orange: "#ff8847",
+    purple: "#70419a",
+    ink: "#141b2c",
+    text: "#344154",
+    muted: "#6d7789",
+    soft: "#f5fbfd",
   },
-  navigation: [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Odoo ERP", href: "#odoo" },
-    { label: "Industries", href: "#industries" },
-    { label: "FAQ", href: "#faq" },
-  ],
-  hero: {
-    eyebrow: "Odoo ERP, software and IT solutions",
-    title: "Accelerate growth with practical ERP implementation.",
-    copy:
-      "AimAze Tech Solutions helps you replace scattered tools, manual reporting, and disconnected processes with clean, scalable systems built around the way your business actually works.",
-    points: ["Odoo ERP implementation", "Custom modules", "Integrations and support"],
-    primaryButton: { label: "Talk to Us", href: "#contact" },
-    secondaryButton: { label: "View Services", href: "#services" },
-    image: "assets/odoo-erp-solution-post.png",
-    imageAlt: "Odoo ERP solutions by AimAze Tech Solutions",
-    cardTitle: "ERP that fits your process",
-    cardText: "CRM, HR, finance, sales, inventory, training and support",
-  },
-  about: {
-    eyebrow: "About AimAze",
-    title: "Your technology partner for business operations.",
-    paragraphs: [
-      "AimAze Tech Solutions LLC delivers ERP implementation, business applications, website development, Salesforce cloud work, and IT management solutions for teams that need better control over daily operations.",
-      "We focus on clear requirements, practical configuration, thoughtful customization, and long-term support so your software keeps improving with your business.",
-    ],
-  },
-  problems: {
-    eyebrow: "Operational challenges",
-    title: "Is your business outgrowing its current software?",
-    copy:
-      "Growth becomes harder when teams rely on spreadsheets, disconnected tools, and manual follow-ups. The right ERP setup gives every team one reliable view of the business.",
-    items: [
-      { number: "01", title: "Disconnected data", text: "Sales, inventory, accounting, and operations do not always agree." },
-      { number: "02", title: "Manual effort", text: "Your team spends too much time entering data and preparing reports." },
-      { number: "03", title: "Limited visibility", text: "Management decisions become slower when live performance is unclear." },
-      { number: "04", title: "Process gaps", text: "Approvals, handovers, and customer updates depend on people chasing people." },
-    ],
-  },
-  platform: {
-    eyebrow: "One unified platform",
-    title: "Odoo ERP for the systems your business runs on.",
-    copy:
-      "Odoo brings core business functions into one modular platform. AimAze helps you plan the right modules, configure the system, customize what matters, and train your team for adoption.",
-    bullets: [
-      "No heavy licensing barrier with open-source flexibility",
-      "CRM, HR, finance, sales, inventory, projects and more",
-      "Custom modules tailored to your business workflows",
-      "Integrations with existing systems and reporting needs",
-      "Ongoing support, training and process optimization",
-    ],
-    guideEyebrow: "One expert partner",
-    guideTitle: "The AimAze delivery model",
-    guideItems: [
-      { title: "Implementation", text: "Setup, configuration and rollout" },
-      { title: "Customization", text: "Modules, workflows and dashboards" },
-      { title: "Training", text: "User guidance and adoption support" },
-      { title: "Support", text: "Maintenance and continuous improvement" },
-    ],
-  },
-  stats: [
-    { value: "6", label: "Core technology services" },
-    { value: "ERP", label: "Implementation-first delivery" },
-    { value: "360", label: "Process, data and support mindset" },
-    { value: "1", label: "Partner for your digital operations" },
-  ],
-  services: {
-    eyebrow: "Our services",
-    title: "Business technology solutions under one roof.",
-    copy: "From ERP to websites, we build systems that are useful, maintainable, and aligned with the way your team works.",
-    items: [
-      { short: "ERP", title: "Odoo ERP Implementation", text: "Module planning, setup, workflows, access roles, reporting, migration and rollout." },
-      { short: "DEV", title: "Software Development", text: "Custom web systems, APIs, portals, automation tools and internal platforms." },
-      { short: "APP", title: "Application Development", text: "Business applications that help teams capture, process and act on information." },
-      { short: "SF", title: "Salesforce Cloud Development", text: "Salesforce customization, automation, data models, reports and integrations." },
-      { short: "IT", title: "IT Management Solutions", text: "Operational support, documentation, monitoring structure and system administration." },
-      { short: "WEB", title: "Website Development", text: "Professional company websites, landing pages, campaigns and lead-generation pages." },
-    ],
-  },
-  industries: {
-    eyebrow: "Industries",
-    title: "Built for businesses that need control and visibility.",
-    items: ["Trading and distribution", "Retail operations", "Professional services", "Inventory-led businesses", "Sales teams", "Finance and HR teams"],
-  },
-  process: {
-    eyebrow: "Implementation process",
-    title: "From business process analysis to post-go-live support.",
-    items: [
-      { title: "Discover", text: "Review current tools, workflows, departments, reports, approvals and pain points." },
-      { title: "Design", text: "Map modules, roles, data structure, automations, integrations and rollout priorities." },
-      { title: "Deploy", text: "Configure, customize, test, migrate data, train users and prepare for go-live." },
-      { title: "Improve", text: "Support users, refine dashboards, optimize workflows and add capabilities over time." },
-    ],
-  },
-  faq: {
-    eyebrow: "Questions answered",
-    title: "Odoo ERP and implementation FAQ.",
-    items: [
-      { question: "What does AimAze do?", answer: "AimAze Tech Solutions delivers Odoo ERP implementation, custom software, application development, Salesforce cloud development, IT management solutions and website development." },
-      { question: "Can Odoo be customized for my business?", answer: "Yes. Odoo can be configured with standard modules and extended with custom modules, reports, integrations and workflow changes where your process needs something specific." },
-      { question: "Do you provide training and support?", answer: "Yes. Training and support are part of the delivery approach so your team can use the system confidently after implementation." },
-      { question: "Can AimAze build my company website too?", answer: "Yes. AimAze also builds professional websites and landing pages for businesses that need a clean online presence and lead-generation flow." },
-    ],
-  },
-  contact: {
-    eyebrow: "Request a free business process analysis",
-    title: "Ready to scale without operational chaos?",
-    copy: "Share what you want to improve and AimAze will help you identify the right ERP, software, website or IT solution path.",
-    formButton: "Send Inquiry",
-  },
+  sections: {},
+  navigation: [],
+  topStrip: {},
+  hero: {},
+  about: {},
+  problems: {},
+  platform: {},
+  stats: [],
+  services: { items: [] },
+  industries: { items: [] },
+  process: { items: [] },
+  faq: { items: [] },
+  video: {},
+  gallery: { items: [] },
+  testimonials: { items: [] },
+  caseStudies: { items: [] },
+  blog: { items: [] },
+  customSections: [],
+  contact: {},
 };
 
 function escapeHtml(value) {
@@ -140,8 +52,38 @@ function hostFromUrl(url) {
   try {
     return new URL(url).host;
   } catch {
-    return url;
+    return url || "";
   }
+}
+
+function isEnabled(content, key) {
+  return content.sections?.[key] !== false;
+}
+
+function hasText(value) {
+  return String(value || "").trim().length > 0;
+}
+
+function imageMarkup(src, alt = "", className = "") {
+  if (!hasText(src)) return "";
+  return `<img${className ? ` class="${escapeHtml(className)}"` : ""} src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" />`;
+}
+
+function videoMarkup(url, poster = "", title = "Video") {
+  if (!hasText(url)) return "";
+  const cleanUrl = String(url).trim();
+  const youtube = cleanUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
+  const vimeo = cleanUrl.match(/vimeo\.com\/(\d+)/);
+
+  if (youtube) {
+    return `<iframe src="https://www.youtube.com/embed/${escapeHtml(youtube[1])}" title="${escapeHtml(title)}" allowfullscreen loading="lazy"></iframe>`;
+  }
+
+  if (vimeo) {
+    return `<iframe src="https://player.vimeo.com/video/${escapeHtml(vimeo[1])}" title="${escapeHtml(title)}" allowfullscreen loading="lazy"></iframe>`;
+  }
+
+  return `<video controls ${hasText(poster) ? `poster="${escapeHtml(poster)}"` : ""}><source src="${escapeHtml(cleanUrl)}" />Your browser does not support the video tag.</video>`;
 }
 
 function setMeta(content) {
@@ -155,23 +97,30 @@ function setMeta(content) {
   document.querySelector('link[rel="icon"]')?.setAttribute("href", site.logo || "assets/aimaze-logo-transparent.png");
 }
 
-function renderSite(content) {
+function applyTheme(content) {
+  const theme = content.theme || {};
+  const root = document.documentElement;
+  ["cyan", "blue", "orange", "purple", "ink", "text", "muted", "soft"].forEach((name) => {
+    if (hasText(theme[name])) {
+      root.style.setProperty(`--${name}`, theme[name]);
+    }
+  });
+}
+
+function sectionHeading(section) {
+  return `
+    <div class="section-heading">
+      ${hasText(section.eyebrow) ? `<p class="eyebrow">${escapeHtml(section.eyebrow)}</p>` : ""}
+      ${hasText(section.title) ? `<h2>${escapeHtml(section.title)}</h2>` : ""}
+      ${hasText(section.copy) ? `<p>${escapeHtml(section.copy)}</p>` : ""}
+    </div>
+  `;
+}
+
+function renderTop(content) {
   const site = content.site || {};
   const topStrip = content.topStrip || {};
-  const hero = content.hero || {};
-  const about = content.about || {};
-  const problems = content.problems || {};
-  const platform = content.platform || {};
-  const services = content.services || {};
-  const industries = content.industries || {};
-  const process = content.process || {};
-  const faq = content.faq || {};
-  const contact = content.contact || {};
-  const serviceItems = services.items || [];
-
-  window.AIMAZE_CONTACT_EMAIL = site.email || "hello@aimazetechsolutions.com";
-
-  document.getElementById("site-root").innerHTML = `
+  return `
     <div class="top-strip">
       <p>${escapeHtml(topStrip.text)}</p>
       <a href="${escapeHtml(topStrip.linkHref || "#contact")}">${escapeHtml(topStrip.linkText)}</a>
@@ -179,228 +128,437 @@ function renderSite(content) {
 
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="AimAze Tech Solutions home">
-        <img src="${escapeHtml(site.logo)}" alt="AimAze Tech Solutions logo" />
+        ${imageMarkup(site.logo, "AimAze Tech Solutions logo")}
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
       <nav class="site-nav" data-nav>
-        ${(content.navigation || [])
-          .map((item) => `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`)
-          .join("")}
+        ${(content.navigation || []).map((item) => `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`).join("")}
         <a class="nav-cta" href="#contact">Contact Us</a>
       </nav>
     </header>
+  `;
+}
 
-    <main>
-      <section class="hero" id="home">
-        <div class="hero-shape hero-shape-one"></div>
-        <div class="hero-shape hero-shape-two"></div>
-        <div class="hero-inner">
-          <div class="hero-content">
-            <p class="eyebrow">${escapeHtml(hero.eyebrow)}</p>
-            <h1>${escapeHtml(hero.title)}</h1>
-            <p class="hero-copy">${escapeHtml(hero.copy)}</p>
-            <div class="hero-points" aria-label="Key strengths">
-              ${(hero.points || []).map((point) => `<span>${escapeHtml(point)}</span>`).join("")}
-            </div>
-            <div class="hero-actions">
-              <a class="button button-primary" href="${escapeHtml(hero.primaryButton?.href || "#contact")}">${escapeHtml(hero.primaryButton?.label)}</a>
-              <a class="button button-secondary" href="${escapeHtml(hero.secondaryButton?.href || "#services")}">${escapeHtml(hero.secondaryButton?.label)}</a>
-            </div>
+function renderHero(content) {
+  const hero = content.hero || {};
+  return `
+    <section class="hero" id="home">
+      <div class="hero-shape hero-shape-one"></div>
+      <div class="hero-shape hero-shape-two"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">${escapeHtml(hero.eyebrow)}</p>
+          <h1>${escapeHtml(hero.title)}</h1>
+          <p class="hero-copy">${escapeHtml(hero.copy)}</p>
+          <div class="hero-points" aria-label="Key strengths">
+            ${(hero.points || []).map((point) => `<span>${escapeHtml(point)}</span>`).join("")}
           </div>
-          <div class="hero-card" aria-label="AimAze ERP capabilities">
-            <img src="${escapeHtml(hero.image)}" alt="${escapeHtml(hero.imageAlt)}" />
-            <div class="hero-card-panel">
-              <strong>${escapeHtml(hero.cardTitle)}</strong>
-              <span>${escapeHtml(hero.cardText)}</span>
-            </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="${escapeHtml(hero.primaryButton?.href || "#contact")}">${escapeHtml(hero.primaryButton?.label || "Contact Us")}</a>
+            <a class="button button-secondary" href="${escapeHtml(hero.secondaryButton?.href || "#services")}">${escapeHtml(hero.secondaryButton?.label || "View Services")}</a>
           </div>
         </div>
-      </section>
-
-      <section class="about-section" id="about">
-        <div class="section-heading align-left">
-          <p class="eyebrow">${escapeHtml(about.eyebrow)}</p>
-          <h2>${escapeHtml(about.title)}</h2>
-        </div>
-        <div class="about-copy">
-          ${(about.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
-        </div>
-      </section>
-
-      <section class="section problem-section">
-        <div class="section-heading">
-          <p class="eyebrow">${escapeHtml(problems.eyebrow)}</p>
-          <h2>${escapeHtml(problems.title)}</h2>
-          <p>${escapeHtml(problems.copy)}</p>
-        </div>
-        <div class="problem-grid">
-          ${(problems.items || [])
-            .map(
-              (problem) => `
-                <article>
-                  <span>${escapeHtml(problem.number)}</span>
-                  <h3>${escapeHtml(problem.title)}</h3>
-                  <p>${escapeHtml(problem.text)}</p>
-                </article>`
-            )
-            .join("")}
-        </div>
-      </section>
-
-      <section class="platform-section" id="odoo">
-        <div class="platform-copy">
-          <p class="eyebrow">${escapeHtml(platform.eyebrow)}</p>
-          <h2>${escapeHtml(platform.title)}</h2>
-          <p>${escapeHtml(platform.copy)}</p>
-          <ul class="check-list">
-            ${(platform.bullets || []).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
-          </ul>
-        </div>
-        <div class="guide-panel">
-          <p class="eyebrow">${escapeHtml(platform.guideEyebrow)}</p>
-          <h3>${escapeHtml(platform.guideTitle)}</h3>
-          <div class="guide-grid">
-            ${(platform.guideItems || [])
-              .map(
-                (item) => `
-                  <div>
-                    <strong>${escapeHtml(item.title)}</strong>
-                    <span>${escapeHtml(item.text)}</span>
-                  </div>`
-              )
-              .join("")}
+        <div class="hero-card" aria-label="AimAze ERP capabilities">
+          ${imageMarkup(hero.image, hero.imageAlt)}
+          <div class="hero-card-panel">
+            <strong>${escapeHtml(hero.cardTitle)}</strong>
+            <span>${escapeHtml(hero.cardText)}</span>
           </div>
         </div>
-      </section>
+      </div>
+      ${(hero.gallery || []).length ? `
+        <div class="hero-gallery">
+          ${(hero.gallery || []).map((item) => imageMarkup(item.image, item.alt || hero.title)).join("")}
+        </div>
+      ` : ""}
+      ${hasText(hero.videoUrl) ? `<div class="hero-video video-frame">${videoMarkup(hero.videoUrl, hero.image, hero.title)}</div>` : ""}
+    </section>
+  `;
+}
 
-      <section class="stats-section" aria-label="AimAze service highlights">
-        ${(content.stats || [])
-          .map(
-            (stat) => `
-              <div>
-                <strong>${escapeHtml(stat.value)}</strong>
-                <span>${escapeHtml(stat.label)}</span>
-              </div>`
-          )
+function renderAbout(content) {
+  if (!isEnabled(content, "about")) return "";
+  const about = content.about || {};
+  return `
+    <section class="about-section" id="about">
+      <div class="section-heading align-left">
+        <p class="eyebrow">${escapeHtml(about.eyebrow)}</p>
+        <h2>${escapeHtml(about.title)}</h2>
+      </div>
+      <div class="about-copy">
+        ${(about.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderProblems(content) {
+  if (!isEnabled(content, "problems")) return "";
+  const problems = content.problems || {};
+  return `
+    <section class="section problem-section">
+      ${sectionHeading(problems)}
+      <div class="problem-grid">
+        ${(problems.items || [])
+          .map((problem) => `
+            <article>
+              <span>${escapeHtml(problem.number)}</span>
+              <h3>${escapeHtml(problem.title)}</h3>
+              <p>${escapeHtml(problem.text)}</p>
+            </article>
+          `)
           .join("")}
-      </section>
+      </div>
+    </section>
+  `;
+}
 
-      <section class="section services-section" id="services">
-        <div class="section-heading">
-          <p class="eyebrow">${escapeHtml(services.eyebrow)}</p>
-          <h2>${escapeHtml(services.title)}</h2>
-          <p>${escapeHtml(services.copy)}</p>
-        </div>
-        <div class="service-grid">
-          ${serviceItems
-            .map(
-              (service) => `
-                <article class="service-card">
-                  <span class="service-icon">${escapeHtml(service.short)}</span>
-                  <h3>${escapeHtml(service.title)}</h3>
-                  <p>${escapeHtml(service.text)}</p>
-                </article>`
-            )
+function renderPlatform(content) {
+  if (!isEnabled(content, "platform")) return "";
+  const platform = content.platform || {};
+  return `
+    <section class="platform-section" id="odoo">
+      <div class="platform-copy">
+        <p class="eyebrow">${escapeHtml(platform.eyebrow)}</p>
+        <h2>${escapeHtml(platform.title)}</h2>
+        <p>${escapeHtml(platform.copy)}</p>
+        <ul class="check-list">
+          ${(platform.bullets || []).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
+        </ul>
+      </div>
+      <div class="guide-panel">
+        <p class="eyebrow">${escapeHtml(platform.guideEyebrow)}</p>
+        <h3>${escapeHtml(platform.guideTitle)}</h3>
+        <div class="guide-grid">
+          ${(platform.guideItems || [])
+            .map((item) => `
+              <div>
+                <strong>${escapeHtml(item.title)}</strong>
+                <span>${escapeHtml(item.text)}</span>
+              </div>
+            `)
             .join("")}
         </div>
-      </section>
+      </div>
+    </section>
+  `;
+}
 
-      <section class="section industries-section" id="industries">
-        <div class="section-heading">
-          <p class="eyebrow">${escapeHtml(industries.eyebrow)}</p>
-          <h2>${escapeHtml(industries.title)}</h2>
-        </div>
-        <div class="industry-grid">
-          ${(industries.items || []).map((industry) => `<span>${escapeHtml(industry)}</span>`).join("")}
-        </div>
-      </section>
+function renderStats(content) {
+  if (!isEnabled(content, "stats")) return "";
+  return `
+    <section class="stats-section" aria-label="AimAze service highlights">
+      ${(content.stats || [])
+        .map((stat) => `
+          <div>
+            <strong>${escapeHtml(stat.value)}</strong>
+            <span>${escapeHtml(stat.label)}</span>
+          </div>
+        `)
+        .join("")}
+    </section>
+  `;
+}
 
-      <section class="section process-section">
-        <div class="section-heading align-left">
-          <p class="eyebrow">${escapeHtml(process.eyebrow)}</p>
-          <h2>${escapeHtml(process.title)}</h2>
-        </div>
-        <div class="timeline">
-          ${(process.items || [])
-            .map(
-              (step) => `
-                <article>
-                  <span>${escapeHtml(step.title)}</span>
-                  <p>${escapeHtml(step.text)}</p>
-                </article>`
-            )
-            .join("")}
-        </div>
-      </section>
+function renderServices(content) {
+  if (!isEnabled(content, "services")) return "";
+  const services = content.services || {};
+  return `
+    <section class="section services-section" id="services">
+      ${sectionHeading(services)}
+      <div class="service-grid">
+        ${(services.items || [])
+          .map((service) => `
+            <article class="service-card">
+              ${imageMarkup(service.image, service.title, "service-card-image")}
+              <span class="service-icon">${escapeHtml(service.short)}</span>
+              <h3>${escapeHtml(service.title)}</h3>
+              <p>${escapeHtml(service.text)}</p>
+              ${hasText(service.videoUrl) ? `<div class="mini-video">${videoMarkup(service.videoUrl, service.image, service.title)}</div>` : ""}
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
 
-      <section class="section faq-section" id="faq">
-        <div class="section-heading">
-          <p class="eyebrow">${escapeHtml(faq.eyebrow)}</p>
-          <h2>${escapeHtml(faq.title)}</h2>
-        </div>
-        <div class="faq-list">
-          ${(faq.items || [])
-            .map(
-              (item, index) => `
-                <details ${index === 0 ? "open" : ""}>
-                  <summary>${escapeHtml(item.question)}</summary>
-                  <p>${escapeHtml(item.answer)}</p>
-                </details>`
-            )
-            .join("")}
-        </div>
-      </section>
+function renderIndustries(content) {
+  if (!isEnabled(content, "industries")) return "";
+  const industries = content.industries || {};
+  return `
+    <section class="section industries-section" id="industries">
+      ${sectionHeading(industries)}
+      <div class="industry-grid">
+        ${(industries.items || []).map((industry) => `<span>${escapeHtml(industry)}</span>`).join("")}
+      </div>
+    </section>
+  `;
+}
 
-      <section class="contact-section" id="contact">
-        <div class="contact-card">
-          <p class="eyebrow">${escapeHtml(contact.eyebrow)}</p>
-          <h2>${escapeHtml(contact.title)}</h2>
-          <p>${escapeHtml(contact.copy)}</p>
-          <div class="contact-links">
-            <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>
-            <a href="${escapeHtml(site.domain)}">${escapeHtml(hostFromUrl(site.domain))}</a>
+function renderProcess(content) {
+  if (!isEnabled(content, "process")) return "";
+  const process = content.process || {};
+  return `
+    <section class="section process-section">
+      <div class="section-heading align-left">
+        <p class="eyebrow">${escapeHtml(process.eyebrow)}</p>
+        <h2>${escapeHtml(process.title)}</h2>
+      </div>
+      <div class="timeline">
+        ${(process.items || [])
+          .map((step) => `
+            <article>
+              <span>${escapeHtml(step.title)}</span>
+              <p>${escapeHtml(step.text)}</p>
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderVideoSection(content) {
+  if (!isEnabled(content, "video")) return "";
+  const video = content.video || {};
+  if (!hasText(video.videoUrl)) return "";
+  return `
+    <section class="section video-section" id="video">
+      ${sectionHeading(video)}
+      <div class="video-frame">${videoMarkup(video.videoUrl, video.posterImage, video.title)}</div>
+    </section>
+  `;
+}
+
+function renderGallery(content) {
+  if (!isEnabled(content, "gallery")) return "";
+  const gallery = content.gallery || {};
+  return `
+    <section class="section gallery-section" id="gallery">
+      ${sectionHeading(gallery)}
+      <div class="gallery-grid">
+        ${(gallery.items || [])
+          .map((item) => `
+            <article class="media-card">
+              ${imageMarkup(item.image, item.alt || item.title)}
+              <div>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.text)}</p>
+              </div>
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderTestimonials(content) {
+  if (!isEnabled(content, "testimonials")) return "";
+  const testimonials = content.testimonials || {};
+  return `
+    <section class="section testimonials-section" id="testimonials">
+      ${sectionHeading(testimonials)}
+      <div class="testimonial-grid">
+        ${(testimonials.items || [])
+          .map((item) => `
+            <article class="testimonial-card">
+              ${imageMarkup(item.image, item.name, "avatar")}
+              <p>${escapeHtml(item.quote)}</p>
+              <strong>${escapeHtml(item.name)}</strong>
+              <span>${escapeHtml(item.role)}</span>
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderCaseStudies(content) {
+  if (!isEnabled(content, "caseStudies")) return "";
+  const caseStudies = content.caseStudies || {};
+  return `
+    <section class="section case-section" id="case-studies">
+      ${sectionHeading(caseStudies)}
+      <div class="case-grid">
+        ${(caseStudies.items || [])
+          .map((item) => `
+            <article class="case-card">
+              ${imageMarkup(item.image, item.title)}
+              <div>
+                <span>${escapeHtml(item.industry)}</span>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.summary)}</p>
+                <strong>${escapeHtml(item.result)}</strong>
+              </div>
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderBlog(content) {
+  if (!isEnabled(content, "blog")) return "";
+  const blog = content.blog || {};
+  return `
+    <section class="section blog-section" id="blog">
+      ${sectionHeading(blog)}
+      <div class="blog-grid">
+        ${(blog.items || [])
+          .map((item) => `
+            <article class="blog-card">
+              ${imageMarkup(item.image, item.title)}
+              <div>
+                <span>${escapeHtml(item.category)}${hasText(item.date) ? ` • ${escapeHtml(item.date)}` : ""}</span>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.excerpt)}</p>
+                ${hasText(item.link) ? `<a href="${escapeHtml(item.link)}">Read more</a>` : ""}
+              </div>
+            </article>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderFaq(content) {
+  if (!isEnabled(content, "faq")) return "";
+  const faq = content.faq || {};
+  return `
+    <section class="section faq-section" id="faq">
+      ${sectionHeading(faq)}
+      <div class="faq-list">
+        ${(faq.items || [])
+          .map((item, index) => `
+            <details ${index === 0 ? "open" : ""}>
+              <summary>${escapeHtml(item.question)}</summary>
+              <p>${escapeHtml(item.answer)}</p>
+            </details>
+          `)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderCustomSections(content) {
+  if (!isEnabled(content, "customSections")) return "";
+  return (content.customSections || [])
+    .filter((section) => section.enabled)
+    .map((section) => `
+      <section class="section custom-section">
+        <div class="custom-layout">
+          <div>
+            ${sectionHeading(section)}
+            <div class="custom-items">
+              ${(section.items || [])
+                .map((item) => `
+                  <article>
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p>${escapeHtml(item.text)}</p>
+                  </article>
+                `)
+                .join("")}
+            </div>
+          </div>
+          <div class="custom-media">
+            ${videoMarkup(section.videoUrl, section.image, section.title) || imageMarkup(section.image, section.title)}
           </div>
         </div>
-        <form class="contact-form" data-contact-form>
-          <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
-          <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
-          <label>
-            <span>Service needed</span>
-            <select name="service" required>
-              <option value="">Select a service</option>
-              ${serviceItems.map((service) => `<option>${escapeHtml(service.title)}</option>`).join("")}
-            </select>
-          </label>
-          <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
-          <button class="button button-primary" type="submit">${escapeHtml(contact.formButton || "Send Inquiry")}</button>
-        </form>
       </section>
-    </main>
+    `)
+    .join("");
+}
 
+function renderContact(content) {
+  if (!isEnabled(content, "contact")) return "";
+  const site = content.site || {};
+  const services = content.services || {};
+  const contact = content.contact || {};
+  return `
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <p class="eyebrow">${escapeHtml(contact.eyebrow)}</p>
+        <h2>${escapeHtml(contact.title)}</h2>
+        <p>${escapeHtml(contact.copy)}</p>
+        <div class="contact-links">
+          <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>
+          <a href="${escapeHtml(site.domain)}">${escapeHtml(hostFromUrl(site.domain))}</a>
+        </div>
+      </div>
+      <form class="contact-form" data-contact-form>
+        <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
+        <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+        <label>
+          <span>Service needed</span>
+          <select name="service" required>
+            <option value="">Select a service</option>
+            ${(services.items || []).map((service) => `<option>${escapeHtml(service.title)}</option>`).join("")}
+          </select>
+        </label>
+        <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <button class="button button-primary" type="submit">${escapeHtml(contact.formButton || "Send Inquiry")}</button>
+      </form>
+    </section>
+  `;
+}
+
+function renderFooter(content) {
+  const site = content.site || {};
+  return `
     <footer class="site-footer">
-      <img src="${escapeHtml(site.logo)}" alt="AimAze Tech Solutions logo" />
+      ${imageMarkup(site.logo, "AimAze Tech Solutions logo")}
       <p>© <span data-year></span> ${escapeHtml(site.footerText)}</p>
     </footer>
   `;
+}
 
+function renderSite(content) {
+  window.AIMAZE_CONTACT_EMAIL = content.site?.email || "hello@aimazetechsolutions.com";
+  document.getElementById("site-root").innerHTML = `
+    ${renderTop(content)}
+    <main>
+      ${renderHero(content)}
+      ${renderAbout(content)}
+      ${renderProblems(content)}
+      ${renderPlatform(content)}
+      ${renderStats(content)}
+      ${renderServices(content)}
+      ${renderIndustries(content)}
+      ${renderProcess(content)}
+      ${renderVideoSection(content)}
+      ${renderGallery(content)}
+      ${renderTestimonials(content)}
+      ${renderCaseStudies(content)}
+      ${renderBlog(content)}
+      ${renderCustomSections(content)}
+      ${renderFaq(content)}
+      ${renderContact(content)}
+    </main>
+    ${renderFooter(content)}
+  `;
   document.dispatchEvent(new Event("aimaze:rendered"));
 }
 
 async function loadContent() {
   try {
     const response = await fetch("content.json", { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error("Could not load content.json");
-    }
-    return await response.json();
+    if (!response.ok) throw new Error("Could not load content.json");
+    return { ...defaultContent, ...(await response.json()) };
   } catch {
-    return fallbackContent;
+    return defaultContent;
   }
 }
 
 loadContent().then((content) => {
+  applyTheme(content);
   setMeta(content);
   renderSite(content);
 });

@@ -30,6 +30,8 @@ To activate it:
 3. Connect the GitHub repo to Netlify instead of using manual drag-and-drop deploys.
 4. Use Decap CMS with your GitHub login. Your GitHub account must have write access to the repo.
 
+CMS-editable areas include theme colors, section visibility, hero images/video, service images/videos, gallery/portfolio items, testimonials, case studies, blog/news posts, FAQ, and custom add-on sections.
+
 ## Netlify
 
 Upload this whole folder or the zip file to Netlify. After deployment, add the custom domain `aimazetechsolutions.com` in Netlify, then update DNS in Hostinger as Netlify instructs.
