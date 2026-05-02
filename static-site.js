@@ -368,9 +368,14 @@ function renderPageHero(content, key) {
 
 function renderHero(content) {
   const hero = content.hero || {};
-  const heroBackground = hero.backgroundImage || hero.image || content.site?.ogImage || "";
+  const showBackgroundImage = hero.showBackgroundImage !== false;
+  const showMainImage = hero.showMainImage !== false;
+  const showExtraImages = hero.showExtraImages !== false;
+  const showFloatingCards = hero.showFloatingCards !== false;
+  const heroBackground = showBackgroundImage ? hero.backgroundImage || hero.image || content.site?.ogImage || "" : "";
+  const heroImage = showMainImage && hasText(hero.image) ? imageMarkup(hero.image, hero.imageAlt) : "";
   return `
-    <section class="hero hero-with-background reveal" id="home" style="--hero-bg-image: ${escapeHtml(cssImageUrl(heroBackground))};"${sbObject("hero")}>
+    <section class="hero ${showBackgroundImage ? "hero-with-background" : "hero-without-background"} reveal" id="home" style="--hero-bg-image: ${escapeHtml(cssImageUrl(heroBackground))};"${sbObject("hero")}>
       <div class="hero-shape hero-shape-one"></div>
       <div class="hero-shape hero-shape-two"></div>
       <div class="hero-inner">
@@ -387,30 +392,32 @@ function renderHero(content) {
           </div>
         </div>
         <div class="hero-showcase" aria-label="AimAze ERP capabilities">
-          <div class="hero-card">
-            <div${sbField(".image")}>${imageMarkup(hero.image, hero.imageAlt)}</div>
+          <div class="hero-card"${sbField(".showMainImage")}>
+            ${heroImage ? `<div${sbField(".image")}>${heroImage}</div>` : ""}
             <div class="hero-card-panel">
               <strong${sbField(".cardTitle")}>${escapeHtml(hero.cardTitle)}</strong>
               <span${sbField(".cardText")}>${escapeHtml(hero.cardText)}</span>
             </div>
           </div>
-          <div class="hero-float-card float-card-one">
-            <span>ERP</span>
-            <strong>Unified operations</strong>
-          </div>
-          <div class="hero-float-card float-card-two">
-            <span>360</span>
-            <strong>Process visibility</strong>
-          </div>
-          <div class="hero-float-card float-card-three">
-            <span>API</span>
-            <strong>Connected systems</strong>
-          </div>
+          ${showFloatingCards ? `
+            <div class="hero-float-card float-card-one"${sbField(".showFloatingCards")}>
+              <span>ERP</span>
+              <strong>Unified operations</strong>
+            </div>
+            <div class="hero-float-card float-card-two"${sbField(".showFloatingCards")}>
+              <span>360</span>
+              <strong>Process visibility</strong>
+            </div>
+            <div class="hero-float-card float-card-three"${sbField(".showFloatingCards")}>
+              <span>API</span>
+              <strong>Connected systems</strong>
+            </div>
+          ` : ""}
         </div>
       </div>
-      ${(hero.gallery || []).length ? `
-        <div class="hero-gallery">
-          ${(hero.gallery || []).map((item) => imageMarkup(item.image, item.alt || hero.title)).join("")}
+      ${showExtraImages && (hero.gallery || []).length ? `
+        <div class="hero-gallery"${sbField(".showExtraImages")}>
+          ${(hero.gallery || []).map((item, index) => `<div${sbField(`.gallery.${index}.image`)}>${imageMarkup(item.image, item.alt || hero.title)}</div>`).join("")}
         </div>
       ` : ""}
       ${hasText(hero.videoUrl) ? `<div class="hero-video video-frame">${videoMarkup(hero.videoUrl, hero.image, hero.title)}</div>` : ""}
