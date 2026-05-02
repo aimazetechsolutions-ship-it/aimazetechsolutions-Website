@@ -115,7 +115,7 @@
             "href": "services.html"
         },
         "showBackgroundImage": true,
-        "showMainImage": true,
+        "showMainImage": false,
         "showExtraImages": true,
         "showFloatingCards": true,
         "image": "assets/odoo-erp-solution-post.png",
