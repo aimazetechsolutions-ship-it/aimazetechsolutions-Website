@@ -116,7 +116,7 @@
         },
         "showBackgroundImage": true,
         "showMainImage": false,
-        "showExtraImages": true,
+        "showExtraImages": false,
         "showFloatingCards": true,
         "image": "assets/odoo-erp-solution-post.png",
         "imageAlt": "Odoo ERP solutions by AimAze Tech Solutions",
