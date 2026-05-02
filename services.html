@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="services">
+    <form name="website-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="website-inquiry" />
+      <input name="name" />
+      <input name="email" />
+      <input name="service" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
     <div id="site-root"><div class="loading-screen"><img src="assets/aimaze-logo-transparent.png" alt="AimAze Tech Solutions logo" /><p>Loading AimAze Tech Solutions...</p></div></div>
     <script src="static-site.js"></script>
     <script src="script.js"></script>

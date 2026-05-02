@@ -33,22 +33,44 @@ function initAimazeInteractions() {
   }
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const recipient = window.AIMAZE_CONTACT_EMAIL || "hello@aimazetechsolutions.com";
       const formData = new FormData(contactForm);
-      const name = formData.get("name");
-      const email = formData.get("email");
-      const service = formData.get("service");
-      const message = formData.get("message");
+      const status = contactForm.querySelector("[data-form-status]");
+      const button = contactForm.querySelector("button[type='submit']");
 
-      const subject = encodeURIComponent(`Website inquiry: ${service}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nService needed: ${service}\n\nMessage:\n${message}`
-      );
+      if (status) {
+        status.textContent = "Sending your inquiry...";
+        status.className = "form-status";
+      }
 
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      if (button) {
+        button.disabled = true;
+      }
+
+      try {
+        await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        contactForm.reset();
+        if (status) {
+          status.textContent = "Thank you. Your inquiry has been sent successfully.";
+          status.classList.add("is-success");
+        }
+      } catch {
+        if (status) {
+          status.textContent = "Something went wrong. Please email us directly if this keeps happening.";
+          status.classList.add("is-error");
+        }
+      } finally {
+        if (button) {
+          button.disabled = false;
+        }
+      }
     });
   }
 

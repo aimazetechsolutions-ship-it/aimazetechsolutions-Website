@@ -610,7 +610,9 @@ function renderContact(content) {
           <a href="${escapeHtml(site.domain)}">${escapeHtml(hostFromUrl(site.domain))}</a>
         </div>
       </div>
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form" name="website-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" data-contact-form>
+        <input type="hidden" name="form-name" value="website-inquiry" />
+        <p class="hidden-field"><label>Do not fill this out: <input name="bot-field" /></label></p>
         <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
         <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
         <label>
@@ -622,6 +624,7 @@ function renderContact(content) {
         </label>
         <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
         <button class="button button-primary" type="submit">${escapeHtml(contact.formButton || "Send Inquiry")}</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
       </form>
     </section>
   `;

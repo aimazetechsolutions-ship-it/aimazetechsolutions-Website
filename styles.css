@@ -1023,6 +1023,32 @@ textarea {
   resize: vertical;
 }
 
+.hidden-field {
+  display: none;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.form-status.is-success {
+  color: #14734f;
+}
+
+.form-status.is-error {
+  color: #a3162c;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+  transform: none;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -1051,6 +1077,41 @@ textarea:focus {
 
 .site-footer p {
   margin: 0;
+}
+
+.maintenance {
+  display: grid;
+  width: min(760px, calc(100% - 36px));
+  min-height: 100vh;
+  align-content: center;
+  justify-items: start;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.maintenance img {
+  width: min(280px, 74vw);
+  margin-bottom: 34px;
+}
+
+.maintenance .copy {
+  max-width: 620px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 1.18rem;
+}
+
+.maintenance a {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 6px;
+  color: var(--white);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--cyan), var(--blue) 54%, var(--purple));
+  box-shadow: 0 16px 38px rgba(63, 131, 223, 0.24);
 }
 
 .reveal {
