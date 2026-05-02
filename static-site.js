@@ -5,7 +5,7 @@ const defaultContent = {
     domain: "https://aimazetechsolutions.com",
     logo: "assets/aimaze-logo-transparent.png",
     ogImage: "assets/aimaze-coverpage.png",
-    email: "hello@aimazetechsolutions.com",
+    email: "info@aimazetechsolutions.com",
     footerText: "AimAze Tech Solutions LLC. All rights reserved.",
   },
   theme: {
@@ -615,6 +615,7 @@ function renderContact(content) {
         <p class="hidden-field"><label>Do not fill this out: <input name="bot-field" /></label></p>
         <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
         <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+        <label><span>Phone / WhatsApp</span><input type="tel" name="phone" autocomplete="tel" required /></label>
         <label>
           <span>Service needed</span>
           <select name="service" required>
@@ -641,7 +642,7 @@ function renderFooter(content) {
 }
 
 function renderSite(content) {
-  window.AIMAZE_CONTACT_EMAIL = content.site?.email || "hello@aimazetechsolutions.com";
+  window.AIMAZE_CONTACT_EMAIL = content.site?.email || "info@aimazetechsolutions.com";
   const page = currentPage();
   document.getElementById("site-root").innerHTML = `
     ${renderTop(content)}
