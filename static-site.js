@@ -18,6 +18,32 @@ const defaultContent = {
     muted: "#6d7789",
     soft: "#f5fbfd",
   },
+  typography: {
+    googleFontUrl: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
+    bodyFont: "Inter, Arial, Helvetica, sans-serif",
+    headingFont: "Inter, Arial, Helvetica, sans-serif",
+    bodySize: "16px",
+    topStripSize: "0.88rem",
+    navSize: "0.95rem",
+    eyebrowSize: "0.78rem",
+    heroTitleMin: "3.35rem",
+    heroTitleMax: "6.6rem",
+    heroCopySize: "1.18rem",
+    pageTitleMin: "3.35rem",
+    pageTitleMax: "6.6rem",
+    sectionTitleMin: "2rem",
+    sectionTitleMax: "4rem",
+    paragraphSize: "1.06rem",
+    cardTitleSize: "1.24rem",
+    cardTextSize: "1rem",
+    tagSize: "0.92rem",
+    statsValueMin: "2.4rem",
+    statsValueMax: "3.8rem",
+    statsLabelSize: "1rem",
+    buttonSize: "1rem",
+    formSize: "1rem",
+    footerSize: "1rem",
+  },
   sections: {},
   navigation: [],
   topStrip: {},
@@ -181,6 +207,56 @@ function applyTheme(content) {
   ["cyan", "blue", "orange", "purple", "ink", "text", "muted", "soft"].forEach((name) => {
     if (hasText(theme[name])) {
       root.style.setProperty(`--${name}`, theme[name]);
+    }
+  });
+}
+
+function applyTypography(content) {
+  const typography = content.typography || {};
+  const root = document.documentElement;
+  const fontLinkId = "aimaze-google-font";
+  const fontUrl = String(typography.googleFontUrl || "").trim();
+  const existingFontLink = document.getElementById(fontLinkId);
+
+  if (fontUrl) {
+    const fontLink = existingFontLink || document.createElement("link");
+    fontLink.id = fontLinkId;
+    fontLink.rel = "stylesheet";
+    fontLink.href = fontUrl;
+    if (!existingFontLink) document.head.appendChild(fontLink);
+  } else if (existingFontLink) {
+    existingFontLink.remove();
+  }
+
+  const typographyVars = {
+    bodyFont: "--font-body",
+    headingFont: "--font-heading",
+    bodySize: "--body-size",
+    topStripSize: "--top-strip-size",
+    navSize: "--nav-size",
+    eyebrowSize: "--eyebrow-size",
+    heroTitleMin: "--hero-title-min",
+    heroTitleMax: "--hero-title-max",
+    heroCopySize: "--hero-copy-size",
+    pageTitleMin: "--page-title-min",
+    pageTitleMax: "--page-title-max",
+    sectionTitleMin: "--section-title-min",
+    sectionTitleMax: "--section-title-max",
+    paragraphSize: "--paragraph-size",
+    cardTitleSize: "--card-title-size",
+    cardTextSize: "--card-text-size",
+    tagSize: "--tag-size",
+    statsValueMin: "--stats-value-min",
+    statsValueMax: "--stats-value-max",
+    statsLabelSize: "--stats-label-size",
+    buttonSize: "--button-size",
+    formSize: "--form-size",
+    footerSize: "--footer-size",
+  };
+
+  Object.entries(typographyVars).forEach(([key, variable]) => {
+    if (hasText(typography[key])) {
+      root.style.setProperty(variable, typography[key]);
     }
   });
 }
@@ -767,6 +843,7 @@ async function loadContent() {
 
 loadContent().then((content) => {
   applyTheme(content);
+  applyTypography(content);
   setMeta(content);
   renderSite(content);
 });

@@ -40,6 +40,35 @@ collections:
               - { label: "Muted Text", name: "muted", widget: "string", hint: "Hex color, for example #6d7789" }
               - { label: "Soft Background", name: "soft", widget: "string", hint: "Hex color, for example #f5fbfd" }
 
+          - label: "Typography / Fonts"
+            name: "typography"
+            widget: "object"
+            fields:
+              - { label: "Google Font CSS URL", name: "googleFontUrl", widget: "string", required: false, hint: "Example: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" }
+              - { label: "Body Font Family", name: "bodyFont", widget: "string", hint: "Example: Inter, Arial, Helvetica, sans-serif" }
+              - { label: "Heading Font Family", name: "headingFont", widget: "string", hint: "Example: Inter, Arial, Helvetica, sans-serif" }
+              - { label: "Base Body Text Size", name: "bodySize", widget: "string", hint: "Example: 16px or 1rem" }
+              - { label: "Top Strip Text Size", name: "topStripSize", widget: "string", hint: "Example: 0.88rem" }
+              - { label: "Navigation Text Size", name: "navSize", widget: "string", hint: "Example: 0.95rem" }
+              - { label: "Small Label / Eyebrow Size", name: "eyebrowSize", widget: "string", hint: "Example: 0.78rem" }
+              - { label: "Hero Title Minimum Size", name: "heroTitleMin", widget: "string", hint: "Example: 3rem" }
+              - { label: "Hero Title Maximum Size", name: "heroTitleMax", widget: "string", hint: "Example: 6rem" }
+              - { label: "Hero Paragraph Size", name: "heroCopySize", widget: "string", hint: "Example: 1.18rem" }
+              - { label: "Page Title Minimum Size", name: "pageTitleMin", widget: "string", hint: "Example: 3rem" }
+              - { label: "Page Title Maximum Size", name: "pageTitleMax", widget: "string", hint: "Example: 6rem" }
+              - { label: "Section Heading Minimum Size", name: "sectionTitleMin", widget: "string", hint: "Example: 2rem" }
+              - { label: "Section Heading Maximum Size", name: "sectionTitleMax", widget: "string", hint: "Example: 4rem" }
+              - { label: "Paragraph Text Size", name: "paragraphSize", widget: "string", hint: "Example: 1.06rem" }
+              - { label: "Card Title Size", name: "cardTitleSize", widget: "string", hint: "Example: 1.24rem" }
+              - { label: "Card Text Size", name: "cardTextSize", widget: "string", hint: "Example: 1rem" }
+              - { label: "Tags / Pills Text Size", name: "tagSize", widget: "string", hint: "Example: 0.92rem" }
+              - { label: "Stats Number Minimum Size", name: "statsValueMin", widget: "string", hint: "Example: 2.4rem" }
+              - { label: "Stats Number Maximum Size", name: "statsValueMax", widget: "string", hint: "Example: 3.8rem" }
+              - { label: "Stats Label Size", name: "statsLabelSize", widget: "string", hint: "Example: 1rem" }
+              - { label: "Button Text Size", name: "buttonSize", widget: "string", hint: "Example: 1rem" }
+              - { label: "Form Text Size", name: "formSize", widget: "string", hint: "Example: 1rem" }
+              - { label: "Footer Text Size", name: "footerSize", widget: "string", hint: "Example: 1rem" }
+
           - label: "Section Visibility"
             name: "sections"
             widget: "object"

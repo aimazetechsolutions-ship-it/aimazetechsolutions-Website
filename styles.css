@@ -12,6 +12,29 @@
   --soft: #f5fbfd;
   --white: #ffffff;
   --shadow: 0 24px 80px rgba(20, 27, 44, 0.12);
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
+  --font-heading: "Inter", Arial, Helvetica, sans-serif;
+  --body-size: 16px;
+  --top-strip-size: 0.88rem;
+  --nav-size: 0.95rem;
+  --eyebrow-size: 0.78rem;
+  --hero-title-min: 3.35rem;
+  --hero-title-max: 6.6rem;
+  --hero-copy-size: 1.18rem;
+  --page-title-min: 3.35rem;
+  --page-title-max: 6.6rem;
+  --section-title-min: 2rem;
+  --section-title-max: 4rem;
+  --paragraph-size: 1.06rem;
+  --card-title-size: 1.24rem;
+  --card-text-size: 1rem;
+  --tag-size: 0.92rem;
+  --stats-value-min: 2.4rem;
+  --stats-value-max: 3.8rem;
+  --stats-label-size: 1rem;
+  --button-size: 1rem;
+  --form-size: 1rem;
+  --footer-size: 1rem;
 }
 
 * {
@@ -25,7 +48,8 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--body-size);
   line-height: 1.6;
   background: var(--white);
 }
@@ -62,7 +86,7 @@ a {
   min-height: 38px;
   padding: 7px 18px;
   color: var(--white);
-  font-size: 0.88rem;
+  font-size: var(--top-strip-size);
   font-weight: 700;
   text-align: center;
   background: linear-gradient(90deg, var(--purple), var(--blue), var(--cyan));
@@ -108,7 +132,7 @@ a {
   align-items: center;
   gap: 24px;
   color: #263248;
-  font-size: 0.95rem;
+  font-size: var(--nav-size);
   font-weight: 800;
 }
 
@@ -213,10 +237,16 @@ a {
 .eyebrow {
   margin: 0 0 12px;
   color: var(--purple);
-  font-size: 0.78rem;
+  font-size: var(--eyebrow-size);
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
 }
 
 h1,
@@ -229,7 +259,7 @@ p {
 h1 {
   max-width: 760px;
   margin-bottom: 22px;
-  font-size: clamp(3.35rem, 7vw, 6.6rem);
+  font-size: clamp(var(--hero-title-min), 7vw, var(--hero-title-max));
   line-height: 0.96;
   letter-spacing: 0;
 }
@@ -241,14 +271,14 @@ h1 {
 
 h2 {
   margin-bottom: 16px;
-  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-size: clamp(var(--section-title-min), 4.5vw, var(--section-title-max));
   line-height: 1.04;
   letter-spacing: 0;
 }
 
 h3 {
   margin-bottom: 10px;
-  font-size: 1.24rem;
+  font-size: var(--card-title-size);
   line-height: 1.25;
 }
 
@@ -256,7 +286,7 @@ h3 {
   max-width: 720px;
   margin-bottom: 24px;
   color: var(--text);
-  font-size: clamp(1.08rem, 1.7vw, 1.26rem);
+  font-size: clamp(var(--hero-copy-size), 1.7vw, 1.26rem);
 }
 
 .hero-points {
@@ -271,7 +301,7 @@ h3 {
   border: 1px solid rgba(112, 65, 154, 0.17);
   border-radius: 999px;
   color: #263248;
-  font-size: 0.92rem;
+  font-size: var(--tag-size);
   font-weight: 800;
   background: rgba(255, 255, 255, 0.78);
 }
@@ -290,6 +320,7 @@ h3 {
   padding: 14px 24px;
   border: 1px solid transparent;
   border-radius: 6px;
+  font-size: var(--button-size);
   font-weight: 900;
   line-height: 1.1;
   transition:
@@ -411,7 +442,11 @@ h3 {
 .page-hero p:not(.eyebrow) {
   max-width: 760px;
   color: var(--text);
-  font-size: clamp(1.08rem, 1.7vw, 1.26rem);
+  font-size: clamp(var(--paragraph-size), 1.7vw, 1.26rem);
+}
+
+.page-hero h1 {
+  font-size: clamp(var(--page-title-min), 7vw, var(--page-title-max));
 }
 
 .page-hero-media {
@@ -550,7 +585,7 @@ h3 {
 .about-copy p,
 .contact-card p {
   color: var(--muted);
-  font-size: 1.06rem;
+  font-size: var(--paragraph-size);
 }
 
 .align-left {
@@ -632,6 +667,7 @@ h3 {
 .timeline p,
 .faq-list p {
   color: var(--muted);
+  font-size: var(--card-text-size);
 }
 
 .platform-section {
@@ -743,12 +779,13 @@ h3 {
 .stats-section strong {
   margin-bottom: 8px;
   color: var(--purple);
-  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-size: clamp(var(--stats-value-min), 4vw, var(--stats-value-max));
   line-height: 1;
 }
 
 .stats-section span {
   color: var(--muted);
+  font-size: var(--stats-label-size);
   font-weight: 800;
 }
 
@@ -810,6 +847,7 @@ h3 {
   border: 1px solid rgba(112, 65, 154, 0.18);
   border-radius: 999px;
   color: #263248;
+  font-size: var(--tag-size);
   font-weight: 800;
   background: var(--white);
 }
@@ -941,6 +979,7 @@ h3 {
 .testimonial-card p,
 .custom-items p {
   color: var(--muted);
+  font-size: var(--card-text-size);
 }
 
 .testimonials-section {
@@ -1111,7 +1150,7 @@ label {
   display: grid;
   gap: 7px;
   color: #334056;
-  font-size: 0.93rem;
+  font-size: var(--form-size);
   font-weight: 900;
 }
 
@@ -1173,6 +1212,7 @@ textarea:focus {
   padding: 28px clamp(18px, 5vw, 76px);
   border-top: 1px solid var(--line);
   color: var(--muted);
+  font-size: var(--footer-size);
   background: var(--white);
 }
 
@@ -1447,7 +1487,7 @@ textarea:focus {
 @media (max-width: 1080px) {
   .site-nav {
     gap: 16px;
-    font-size: 0.88rem;
+    font-size: var(--nav-size);
   }
 
   .hero-inner,
