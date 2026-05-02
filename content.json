@@ -423,24 +423,7 @@
       }
     ]
   },
-  "stats": [
-    {
-      "value": "6",
-      "label": "Core technology services"
-    },
-    {
-      "value": "ERP",
-      "label": "Implementation-first delivery"
-    },
-    {
-      "value": "360",
-      "label": "Process, data and support mindset"
-    },
-    {
-      "value": "1",
-      "label": "Partner for your digital operations"
-    }
-  ],
+  "stats": [],
   "customSections": [
     {
       "enabled": false,
