@@ -1,4 +1,5 @@
 const defaultContent = {
+  type: "WebsiteContent",
   site: {
     title: "AimAze Tech Solutions",
     description: "AimAze Tech Solutions provides Odoo ERP implementation and technology solutions.",

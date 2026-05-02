@@ -104,6 +104,7 @@ export default defineStackbitConfig({
             { name: "conversion", label: "Forms", icon: "form" },
           ],
           fields: [
+            { name: "type", label: "Visual Editor Type", type: "string", hidden: true, required: true, default: "WebsiteContent" },
             objectField("site", "Site / Brand", [
               stringField("title", "Browser title"),
               textField("description", "SEO description"),
