@@ -75,6 +75,14 @@ function initAimazeInteractions() {
   }
 
   const revealItems = document.querySelectorAll(".reveal");
+  const staggerItems = document.querySelectorAll(
+    ".service-card, .problem-grid article, .media-card, .testimonial-card, .case-card, .blog-card, .timeline article, .faq-list details"
+  );
+
+  staggerItems.forEach((item, index) => {
+    item.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+  });
+
   if ("IntersectionObserver" in window && revealItems.length) {
     const observer = new IntersectionObserver(
       (entries) => {

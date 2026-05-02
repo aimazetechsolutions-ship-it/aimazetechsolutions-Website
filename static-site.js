@@ -153,6 +153,17 @@ function videoMarkup(url, poster = "", title = "Video") {
   return `<video controls ${hasText(poster) ? `poster="${escapeHtml(poster)}"` : ""}><source src="${escapeHtml(cleanUrl)}" />Your browser does not support the video tag.</video>`;
 }
 
+function visualTileMarkup(label = "AimAze", title = "Technology solution", className = "") {
+  return `
+    <div class="visual-tile ${escapeHtml(className)}" aria-label="${escapeHtml(title)}">
+      <div class="visual-tile-grid"></div>
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(title)}</strong>
+      <div class="visual-bars"><i></i><i></i><i></i></div>
+    </div>
+  `;
+}
+
 function setMeta(content) {
   const site = content.site || {};
   document.title = site.title || "AimAze Tech Solutions";
@@ -252,7 +263,12 @@ function renderPageHero(content, key) {
         </div>
       </div>
       <div class="page-hero-media">
-        ${imageMarkup(hero.image || content.site?.ogImage, hero.imageAlt || meta.title)}
+        <div class="page-hero-stack">
+          ${imageMarkup(hero.image || content.site?.ogImage, hero.imageAlt || meta.title)}
+          <div class="floating-chip chip-one">ERP</div>
+          <div class="floating-chip chip-two">Cloud</div>
+          <div class="floating-chip chip-three">Apps</div>
+        </div>
       </div>
     </section>
   `;
@@ -277,11 +293,25 @@ function renderHero(content) {
             <a class="button button-secondary" href="${escapeHtml(hero.secondaryButton?.href || "#services")}">${escapeHtml(hero.secondaryButton?.label || "View Services")}</a>
           </div>
         </div>
-        <div class="hero-card" aria-label="AimAze ERP capabilities">
-          ${imageMarkup(hero.image, hero.imageAlt)}
-          <div class="hero-card-panel">
-            <strong>${escapeHtml(hero.cardTitle)}</strong>
-            <span>${escapeHtml(hero.cardText)}</span>
+        <div class="hero-showcase" aria-label="AimAze ERP capabilities">
+          <div class="hero-card">
+            ${imageMarkup(hero.image, hero.imageAlt)}
+            <div class="hero-card-panel">
+              <strong>${escapeHtml(hero.cardTitle)}</strong>
+              <span>${escapeHtml(hero.cardText)}</span>
+            </div>
+          </div>
+          <div class="hero-float-card float-card-one">
+            <span>ERP</span>
+            <strong>Unified operations</strong>
+          </div>
+          <div class="hero-float-card float-card-two">
+            <span>360</span>
+            <strong>Process visibility</strong>
+          </div>
+          <div class="hero-float-card float-card-three">
+            <span>API</span>
+            <strong>Connected systems</strong>
           </div>
         </div>
       </div>
@@ -389,7 +419,7 @@ function renderServices(content) {
         ${(services.items || [])
           .map((service) => `
             <article class="service-card">
-              ${imageMarkup(service.image, service.title, "service-card-image")}
+              ${hasText(service.image) ? imageMarkup(service.image, service.title, "service-card-image") : visualTileMarkup(service.short, service.title, "service-card-image")}
               <span class="service-icon">${escapeHtml(service.short)}</span>
               <h3>${escapeHtml(service.title)}</h3>
               <p>${escapeHtml(service.text)}</p>
@@ -505,7 +535,7 @@ function renderCaseStudies(content) {
         ${(caseStudies.items || [])
           .map((item) => `
             <article class="case-card">
-              ${imageMarkup(item.image, item.title)}
+              ${hasText(item.image) ? imageMarkup(item.image, item.title) : visualTileMarkup(item.industry || "Case", item.title)}
               <div>
                 <span>${escapeHtml(item.industry)}</span>
                 <h3>${escapeHtml(item.title)}</h3>
@@ -530,7 +560,7 @@ function renderBlog(content) {
         ${(blog.items || [])
           .map((item) => `
             <article class="blog-card">
-              ${imageMarkup(item.image, item.title)}
+              ${hasText(item.image) ? imageMarkup(item.image, item.title) : visualTileMarkup(item.category || "Insight", item.title)}
               <div>
                 <span>${escapeHtml(item.category)}${hasText(item.date) ? ` • ${escapeHtml(item.date)}` : ""}</span>
                 <h3>${escapeHtml(item.title)}</h3>
