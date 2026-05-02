@@ -129,6 +129,10 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Link URL", name: "href", widget: "string" }
+              - { label: "Show Hero Background Image", name: "showBackgroundImage", widget: "boolean", default: true, required: false }
+              - { label: "Show Hero Main Image", name: "showMainImage", widget: "boolean", default: true, required: false }
+              - { label: "Show Extra Hero Images", name: "showExtraImages", widget: "boolean", default: true, required: false }
+              - { label: "Show Floating Info Cards", name: "showFloatingCards", widget: "boolean", default: true, required: false }
               - { label: "Hero Image", name: "image", widget: "image", required: false }
               - { label: "Hero Background Image", name: "backgroundImage", widget: "image", required: false, hint: "Large tech/background image shown behind the top home-page hero text." }
               - { label: "Hero Image Alt Text", name: "imageAlt", widget: "string" }

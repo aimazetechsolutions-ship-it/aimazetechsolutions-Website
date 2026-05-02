@@ -114,6 +114,10 @@
             "label": "View Services",
             "href": "services.html"
         },
+        "showBackgroundImage": true,
+        "showMainImage": true,
+        "showExtraImages": true,
+        "showFloatingCards": true,
         "image": "assets/odoo-erp-solution-post.png",
         "imageAlt": "Odoo ERP solutions by AimAze Tech Solutions",
         "cardTitle": "ERP that fits your process",
