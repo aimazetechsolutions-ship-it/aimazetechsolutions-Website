@@ -35,7 +35,7 @@
     "primaryCtaLink": "contact.html",
     "secondaryCta": "Explore Odoo Services",
     "secondaryCtaLink": "odoo.html",
-    "videoUrl": "https://cdn.coverr.co/videos/coverr-typing-on-a-laptop-1585/1080p.mp4",
+    "videoUrl": "assets/hero-video.mp4",
     "showVideo": true
   },
   "stats": [
