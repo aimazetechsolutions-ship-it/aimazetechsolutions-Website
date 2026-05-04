@@ -64,7 +64,7 @@ img{max-width:100%;display:block}
 .section.dark{background:var(--dark)}
 .section-head{text-align:center;max-width:800px;margin:0 auto 64px}
 .eyebrow{display:inline-block;padding:6px 16px;border-radius:999px;background:rgba(39,199,215,.1);border:1px solid rgba(39,199,215,.2);color:var(--secondary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
-.section-head h2{font-family:var(--heading-font);font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:16px}
+.section-head h2{font-family:var(--heading-font);font-size:clamp(28px,4vw,var(--section-h-size,52px));font-weight:var(--section-h-weight,800);letter-spacing:-.04em;line-height:1.05;margin-bottom:16px}
 .section-head p{font-size:17px;color:#6d7789;line-height:1.7}
 
 /* CARDS */

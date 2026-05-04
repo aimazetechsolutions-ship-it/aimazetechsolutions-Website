@@ -19,6 +19,16 @@
   if(theme.headingFont)root.setProperty('--heading-font',`'${theme.headingFont}'`);
   if(theme.bodyFont)root.setProperty('--body-font',`'${theme.bodyFont}'`);
   if(theme.baseFontSize)root.setProperty('--base-size',theme.baseFontSize+'px');
+  if(theme.heroHeadingSize)root.setProperty('--hero-h-size',theme.heroHeadingSize+'px');
+  if(theme.heroSubSize)root.setProperty('--hero-sub-size',theme.heroSubSize+'px');
+  if(theme.heroTextSize)root.setProperty('--hero-text-size',theme.heroTextSize+'px');
+  if(theme.sectionHeadingSize)root.setProperty('--section-h-size',theme.sectionHeadingSize+'px');
+  if(theme.cardTitleSize)root.setProperty('--card-title-size',theme.cardTitleSize+'px');
+  if(theme.cardTextSize)root.setProperty('--card-text-size',theme.cardTextSize+'px');
+  if(theme.navFontSize)root.setProperty('--nav-font-size',theme.navFontSize+'px');
+  if(theme.heroHeadingWeight)root.setProperty('--hero-h-weight',theme.heroHeadingWeight);
+  if(theme.sectionHeadingWeight)root.setProperty('--section-h-weight',theme.sectionHeadingWeight);
+  if(theme.cardTitleWeight)root.setProperty('--card-title-weight',theme.cardTitleWeight);
 
   // ── TOPBAR ──
   const topbar=document.getElementById('topbar');

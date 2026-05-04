@@ -368,7 +368,7 @@ body{font-family:'Inter',sans-serif;background:#0f1117;color:#e2e8f0;min-height:
       <!-- THEME PANEL -->
       <div class="panel" id="panel-theme">
         <div class="panel-section">
-          <h3>Brand Colors</h3>
+          <h3>🎨 Brand Colors</h3>
           <div class="form-row triple">
             <div class="form-group">
               <label>Primary Color</label>
@@ -394,7 +394,7 @@ body{font-family:'Inter',sans-serif;background:#0f1117;color:#e2e8f0;min-height:
           </div>
           <div class="form-row single" style="margin-top:8px">
             <div class="form-group">
-              <label>Dark Background Color</label>
+              <label>Dark / Background Color</label>
               <div class="color-row">
                 <input type="color" id="color-dark" oninput="syncColor('dark')">
                 <input type="text" id="color-dark-text" oninput="syncColorText('dark')" placeholder="#101729">
@@ -402,43 +402,136 @@ body{font-family:'Inter',sans-serif;background:#0f1117;color:#e2e8f0;min-height:
             </div>
           </div>
         </div>
+
         <div class="panel-section">
-          <h3>Typography</h3>
+          <h3>🔤 Font Families</h3>
           <div class="form-row">
             <div class="form-group">
               <label>Heading Font</label>
               <select id="heading-font" onchange="updateFontPreview()">
-                <option value="Syne">Syne (Current)</option>
-                <option value="Poppins">Poppins</option>
-                <option value="Raleway">Raleway</option>
-                <option value="Montserrat">Montserrat</option>
-                <option value="Playfair Display">Playfair Display</option>
-                <option value="Space Grotesk">Space Grotesk</option>
-                <option value="DM Sans">DM Sans</option>
-                <option value="Outfit">Outfit</option>
+                <option value="Syne">Syne — Bold & Modern</option>
+                <option value="Poppins">Poppins — Clean & Round</option>
+                <option value="Raleway">Raleway — Elegant</option>
+                <option value="Montserrat">Montserrat — Professional</option>
+                <option value="Playfair Display">Playfair Display — Serif Classic</option>
+                <option value="Space Grotesk">Space Grotesk — Tech Feel</option>
+                <option value="DM Sans">DM Sans — Minimal</option>
+                <option value="Outfit">Outfit — Friendly</option>
+                <option value="Bebas Neue">Bebas Neue — Bold Impact</option>
+                <option value="Oswald">Oswald — Strong</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Body Font</label>
+              <label>Body / Paragraph Font</label>
               <select id="body-font">
-                <option value="Inter">Inter (Current)</option>
+                <option value="Inter">Inter — Default</option>
                 <option value="DM Sans">DM Sans</option>
                 <option value="Nunito">Nunito</option>
                 <option value="Lato">Lato</option>
                 <option value="Source Sans 3">Source Sans 3</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Open Sans">Open Sans</option>
               </select>
             </div>
           </div>
-          <div class="form-row single">
+          <div class="font-preview">
+            <p>Heading font preview:</p>
+            <div class="preview-text" id="font-preview-text">AimAze Tech Solutions</div>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h3>📐 Hero Section Font Sizes</h3>
+          <p style="color:#718096;font-size:13px;margin-bottom:20px">Control the big text on your homepage hero section.</p>
+          <div class="form-row triple">
             <div class="form-group">
-              <label>Base Font Size (px)</label>
-              <input type="range" id="font-size" min="14" max="20" step="1" style="margin-top:8px;accent-color:#27c7d7">
-              <span id="font-size-label" style="color:#718096;font-size:13px">16px</span>
+              <label>Main Heading Size (px)</label>
+              <input type="number" id="hero-heading-size" min="30" max="120" placeholder="78">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 78px</span>
+            </div>
+            <div class="form-group">
+              <label>Sub Heading Size (px)</label>
+              <input type="number" id="hero-sub-size" min="20" max="80" placeholder="52">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 52px</span>
+            </div>
+            <div class="form-group">
+              <label>Description Text Size (px)</label>
+              <input type="number" id="hero-text-size" min="12" max="28" placeholder="18">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 18px</span>
             </div>
           </div>
-          <div class="font-preview">
-            <p>Heading preview:</p>
-            <div class="preview-text" id="font-preview-text">AimAze Tech Solutions</div>
+          <div class="form-row" style="margin-top:8px">
+            <div class="form-group">
+              <label>Heading Font Weight</label>
+              <select id="hero-heading-weight">
+                <option value="400">400 — Regular</option>
+                <option value="500">500 — Medium</option>
+                <option value="600">600 — Semibold</option>
+                <option value="700">700 — Bold</option>
+                <option value="800" selected>800 — Extra Bold</option>
+                <option value="900">900 — Black</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Base Body Font Size (px)</label>
+              <input type="number" id="font-size" min="12" max="22" placeholder="16">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 16px</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h3>📐 Section & Card Font Sizes</h3>
+          <p style="color:#718096;font-size:13px;margin-bottom:20px">Control headings and text inside sections, cards and service boxes.</p>
+          <div class="form-row triple">
+            <div class="form-group">
+              <label>Section Heading Size (px)</label>
+              <input type="number" id="section-heading-size" min="20" max="80" placeholder="52">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 52px</span>
+            </div>
+            <div class="form-group">
+              <label>Card Title Size (px)</label>
+              <input type="number" id="card-title-size" min="12" max="36" placeholder="20">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 20px</span>
+            </div>
+            <div class="form-group">
+              <label>Card Text Size (px)</label>
+              <input type="number" id="card-text-size" min="10" max="22" placeholder="15">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 15px</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Section Heading Weight</label>
+              <select id="section-heading-weight">
+                <option value="400">400 — Regular</option>
+                <option value="600">600 — Semibold</option>
+                <option value="700">700 — Bold</option>
+                <option value="800" selected>800 — Extra Bold</option>
+                <option value="900">900 — Black</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Card Title Weight</label>
+              <select id="card-title-weight">
+                <option value="400">400 — Regular</option>
+                <option value="500">500 — Medium</option>
+                <option value="600">600 — Semibold</option>
+                <option value="700" selected>700 — Bold</option>
+                <option value="800">800 — Extra Bold</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h3>📐 Navigation Font Size</h3>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Nav Links Font Size (px)</label>
+              <input type="number" id="nav-font-size" min="10" max="20" placeholder="14">
+              <span style="color:#718096;font-size:12px;margin-top:4px">Default: 14px</span>
+            </div>
           </div>
         </div>
       </div>
@@ -593,9 +686,17 @@ function populateForms(){
   setColor('dark',t.darkColor||'#101729');
   document.getElementById('heading-font').value=t.headingFont||'Syne';
   document.getElementById('body-font').value=t.bodyFont||'Inter';
-  const fs=t.baseFontSize||16;
-  document.getElementById('font-size').value=fs;
-  document.getElementById('font-size-label').textContent=fs+'px';
+  document.getElementById('font-size').value=t.baseFontSize||'16';
+  document.getElementById('hero-heading-size').value=t.heroHeadingSize||'78';
+  document.getElementById('hero-sub-size').value=t.heroSubSize||'52';
+  document.getElementById('hero-text-size').value=t.heroTextSize||'18';
+  document.getElementById('section-heading-size').value=t.sectionHeadingSize||'52';
+  document.getElementById('card-title-size').value=t.cardTitleSize||'20';
+  document.getElementById('card-text-size').value=t.cardTextSize||'15';
+  document.getElementById('nav-font-size').value=t.navFontSize||'14';
+  document.getElementById('hero-heading-weight').value=t.heroHeadingWeight||'800';
+  document.getElementById('section-heading-weight').value=t.sectionHeadingWeight||'800';
+  document.getElementById('card-title-weight').value=t.cardTitleWeight||'700';
 
   // Site
   const s=content.site||{};
@@ -622,9 +723,6 @@ function syncColorText(name){
 }
 
 // ── FONT SIZE ──
-document.getElementById('font-size').addEventListener('input',function(){
-  document.getElementById('font-size-label').textContent=this.value+'px';
-});
 function updateFontPreview(){
   const font=document.getElementById('heading-font').value;
   document.getElementById('font-preview-text').style.fontFamily=font;
@@ -662,6 +760,11 @@ function renderServiceItem(s,i){
     </div>
     <div class="form-row single"><div class="form-group"><label>Title</label><input type="text" id="svc-title-${i}" value="${s.title||''}"></div></div>
     <div class="form-row single"><div class="form-group"><label>Description</label><textarea id="svc-text-${i}">${s.text||''}</textarea></div></div>
+    <div class="form-row single"><div class="form-group">
+      <label>Image URL (paste a direct image link — from Pexels, Unsplash, or your own uploaded image)</label>
+      <input type="text" id="svc-img-${i}" value="${s.image||''}" placeholder="https://images.pexels.com/photos/...">
+      ${s.image?`<img src="${s.image}" style="margin-top:10px;width:100%;height:120px;object-fit:cover;border-radius:10px;border:1px solid #2d3748" alt="preview">`:''}
+    </div></div>
   </div>`;
 }
 
@@ -729,7 +832,13 @@ function collectContent(){
   const services=[];
   for(let i=0;i<ns;i++){
     const t=document.getElementById('svc-title-'+i);
-    if(t)services.push({icon:document.getElementById('svc-icon-'+i).value,title:t.value,text:document.getElementById('svc-text-'+i).value,link:document.getElementById('svc-link-'+i).value});
+    if(t)services.push({
+      icon:document.getElementById('svc-icon-'+i).value,
+      title:t.value,
+      text:document.getElementById('svc-text-'+i).value,
+      link:document.getElementById('svc-link-'+i).value,
+      image:document.getElementById('svc-img-'+i)?.value||''
+    });
   }
 
   const wp=(content.why&&content.why.points)||[];
@@ -756,8 +865,6 @@ function collectContent(){
   const industriesRaw=document.getElementById('industries-list').value;
   const industries=industriesRaw.split('\n').map(s=>s.trim()).filter(Boolean);
 
-  const fs=document.getElementById('font-size').value;
-
   return{
     site:{
       name:document.getElementById('site-name').value,
@@ -774,7 +881,17 @@ function collectContent(){
       darkColor:document.getElementById('color-dark-text').value,
       headingFont:document.getElementById('heading-font').value,
       bodyFont:document.getElementById('body-font').value,
-      baseFontSize:fs,
+      baseFontSize:document.getElementById('font-size').value||'16',
+      heroHeadingSize:document.getElementById('hero-heading-size').value||'78',
+      heroSubSize:document.getElementById('hero-sub-size').value||'52',
+      heroTextSize:document.getElementById('hero-text-size').value||'18',
+      sectionHeadingSize:document.getElementById('section-heading-size').value||'52',
+      cardTitleSize:document.getElementById('card-title-size').value||'20',
+      cardTextSize:document.getElementById('card-text-size').value||'15',
+      navFontSize:document.getElementById('nav-font-size').value||'14',
+      heroHeadingWeight:document.getElementById('hero-heading-weight').value||'800',
+      sectionHeadingWeight:document.getElementById('section-heading-weight').value||'800',
+      cardTitleWeight:document.getElementById('card-title-weight').value||'700',
     },
     hero:{
       eyebrow:document.getElementById('hero-eyebrow').value,
