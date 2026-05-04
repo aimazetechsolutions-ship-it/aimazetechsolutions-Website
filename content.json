@@ -29,10 +29,26 @@
     "showVideo": true
   },
   "stats": [
-    { "number": "50", "suffix": "+", "label": "Projects Delivered" },
-    { "number": "10", "suffix": "+", "label": "Years Experience" },
-    { "number": "100", "suffix": "%", "label": "Client Satisfaction" },
-    { "number": "15", "suffix": "+", "label": "Modules Expertise" }
+    {
+      "number": "50",
+      "suffix": "+",
+      "label": "Projects Delivered"
+    },
+    {
+      "number": "10",
+      "suffix": "+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "100",
+      "suffix": "%",
+      "label": "Client Satisfaction"
+    },
+    {
+      "number": "15",
+      "suffix": "+",
+      "label": "Modules Expertise"
+    }
   ],
   "services": [
     {
@@ -77,17 +93,45 @@
     "text": "Our goal is to make technology simple, useful and measurable for management and operating teams.",
     "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
     "points": [
-      { "title": "Business-first approach", "text": "We understand finance, controls, operations and management reporting — not only software screens." },
-      { "title": "Practical Odoo expertise", "text": "We focus on the right configuration and customization for real workflows, not over-engineering." },
-      { "title": "Cost-effective delivery", "text": "Open-source flexibility with professional implementation, training and long-term support." },
-      { "title": "Long-term partner", "text": "We stay involved after launch for training, continuous improvements and optimization." }
+      {
+        "title": "Business-first approach",
+        "text": "We understand finance, controls, operations and management reporting — not only software screens."
+      },
+      {
+        "title": "Practical Odoo expertise",
+        "text": "We focus on the right configuration and customization for real workflows, not over-engineering."
+      },
+      {
+        "title": "Cost-effective delivery",
+        "text": "Open-source flexibility with professional implementation, training and long-term support."
+      },
+      {
+        "title": "Long-term partner",
+        "text": "We stay involved after launch for training, continuous improvements and optimization."
+      }
     ]
   },
   "process": [
-    { "step": "01", "title": "Discover", "text": "We study your current process, pain points, reports and required controls." },
-    { "step": "02", "title": "Design", "text": "We map the right Odoo modules, workflows, roles and dashboards for your needs." },
-    { "step": "03", "title": "Implement", "text": "We configure, customize, migrate data and test everything with your users." },
-    { "step": "04", "title": "Train & Support", "text": "We train your team and keep improving the system after go-live." }
+    {
+      "step": "01",
+      "title": "Discover",
+      "text": "We study your current process, pain points, reports and required controls."
+    },
+    {
+      "step": "02",
+      "title": "Design",
+      "text": "We map the right Odoo modules, workflows, roles and dashboards for your needs."
+    },
+    {
+      "step": "03",
+      "title": "Implement",
+      "text": "We configure, customize, migrate data and test everything with your users."
+    },
+    {
+      "step": "04",
+      "title": "Train & Support",
+      "text": "We train your team and keep improving the system after go-live."
+    }
   ],
   "testimonials": [
     {
@@ -116,18 +160,5 @@
     "Professional Services",
     "Retail & E-commerce",
     "Finance & Operations"
-  ],
-  "nav": {
-    "links": [
-      { "label": "Home", "url": "index.html" },
-      { "label": "About", "url": "about.html" },
-      { "label": "Services", "url": "services.html" },
-      { "label": "Odoo ERP", "url": "odoo.html" },
-      { "label": "Industries", "url": "industries.html" },
-      { "label": "Portfolio", "url": "portfolio.html" },
-      { "label": "Blog", "url": "blog.html" }
-    ],
-    "ctaLabel": "Contact Us",
-    "ctaLink": "contact.html"
-  }
+  ]
 }
