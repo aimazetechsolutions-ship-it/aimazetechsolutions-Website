@@ -35,7 +35,8 @@
     "primaryCtaLink": "contact.html",
     "secondaryCta": "Explore Odoo Services",
     "secondaryCtaLink": "odoo.html",
-    "videoUrl": "assets/hero-video.mp4",
+    "videoUrl": "SZEflIVnhH8",
+    "videoNote": "YouTube video ID — change to any YouTube video ID you want as background",
     "showVideo": true
   },
   "stats": [

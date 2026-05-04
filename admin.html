@@ -296,12 +296,18 @@ body{font-family:'Inter',sans-serif;background:#0f1117;color:#e2e8f0;min-height:
         </div>
         <div class="panel-section">
           <h3>Background Video</h3>
-          <div class="form-row single"><div class="form-group"><label>Video URL (mp4)</label><input type="text" id="hero-video" placeholder="https://...mp4"></div></div>
+          <div class="form-row single"><div class="form-group">
+            <label>YouTube Video ID</label>
+            <input type="text" id="hero-video" placeholder="e.g. SZEflIVnhH8">
+            <span style="color:#718096;font-size:12px;margin-top:6px;display:block">
+              Go to YouTube → find a business/office video → copy the ID from the URL after <strong>?v=</strong><br>
+              Example: youtube.com/watch?v=<strong>SZEflIVnhH8</strong> → paste <strong>SZEflIVnhH8</strong>
+            </span>
+          </div></div>
           <div class="toggle-wrap" style="margin-top:12px">
             <label class="toggle"><input type="checkbox" id="hero-show-video" checked><span class="toggle-slider"></span></label>
             <span class="toggle-label">Show background video</span>
           </div>
-          <p style="color:#4a5568;font-size:12px;margin-top:10px">Free video source: <a href="https://www.pexels.com/videos/" target="_blank" style="color:#27c7d7">pexels.com/videos</a> — copy the direct .mp4 URL</p>
         </div>
       </div>
 
