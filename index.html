@@ -88,7 +88,7 @@ img{max-width:100%;display:block}
   position:relative;min-height:100vh;
   display:flex;align-items:center;
   overflow:hidden;padding:120px clamp(20px,6vw,90px) 80px;
-  background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f2d40 100%);
+  background:#000;
 }
 .hero-video{
   position:absolute;inset:0;z-index:0;pointer-events:none;
@@ -96,16 +96,16 @@ img{max-width:100%;display:block}
 .hero-video iframe{
   position:absolute;
   top:50%;left:50%;
-  width:177.78vh; /* 16:9 ratio */
+  width:177.78vh;
   height:100vh;
   min-width:100%;
-  min-height:56.25vw; /* 16:9 ratio */
+  min-height:56.25vw;
   transform:translate(-50%,-50%);
-  border:none;opacity:.55;
+  border:none;opacity:.75;
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
-  background:linear-gradient(135deg,rgba(16,23,41,.82) 0%,rgba(39,199,215,.22) 100%);
+  background:rgba(10,15,30,.45);
 }
 .hero-content{position:relative;z-index:2;max-width:780px}
 .eyebrow{
@@ -526,7 +526,6 @@ img{max-width:100%;display:block}
       allowfullscreen>
     </iframe>
   </div>
-  <canvas id="hero-canvas" style="position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.3"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="eyebrow" id="hero-eyebrow">UAE + International ERP Partner</p>
@@ -659,68 +658,6 @@ img{max-width:100%;display:block}
 <a class="whatsapp-float" href="contact.html" id="wa-btn" title="WhatsApp">💬</a>
 
 <script>
-// ── PARTICLE CANVAS (primary animated background) ──
-(function(){
-  const canvas=document.getElementById('hero-canvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  let W,H,particles=[];
-  function resize(){
-    W=canvas.width=window.innerWidth;
-    H=canvas.height=window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize',resize,{passive:true});
-
-  // Create particles
-  for(let i=0;i<100;i++){
-    particles.push({
-      x:Math.random()*1920,
-      y:Math.random()*1080,
-      r:Math.random()*2.5+.5,
-      dx:(Math.random()-.5)*.5,
-      dy:(Math.random()-.5)*.5,
-      o:Math.random()*.7+.2,
-      c:Math.random()>.5?'39,199,215':'63,131,223'
-    });
-  }
-
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    // Connection lines
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const p1=particles[i],p2=particles[j];
-        const d=Math.hypot(p1.x-p2.x,p1.y-p2.y);
-        if(d<150){
-          ctx.beginPath();
-          ctx.strokeStyle=`rgba(39,199,215,${.2*(1-d/150)})`;
-          ctx.lineWidth=.8;
-          ctx.moveTo(p1.x,p1.y);
-          ctx.lineTo(p2.x,p2.y);
-          ctx.stroke();
-        }
-      }
-    }
-    // Particles
-    particles.forEach(p=>{
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=`rgba(${p.c},${p.o})`;
-      ctx.fill();
-      p.x+=p.dx; p.y+=p.dy;
-      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
-      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-
-  // ── VIDEO: YouTube iframe already autoplays — just ensure wrap is visible ──
-  const wrap=document.getElementById('hero-video-wrap');
-  if(wrap)wrap.style.opacity='1';
-})();
-
 // ── LOAD CONTENT ──
 async function loadContent(){
   try{

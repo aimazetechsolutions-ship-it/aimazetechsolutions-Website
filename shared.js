@@ -1,4 +1,4 @@
-/* shared.js — injects nav, footer, topbar and theme across all pages */
+/* shared.js — injects nav, footer, topbar, theme and hero video across all pages */
 (async function(){
   let c={};
   try{
@@ -9,6 +9,7 @@
   const site=c.site||{};
   const theme=c.theme||{};
   const nav=c.nav||{};
+  const hero=c.hero||{};
 
   // ── APPLY THEME ──
   const root=document.documentElement.style;
@@ -99,18 +100,56 @@
     </div>`;
   }
 
+  // ── PAGE HERO VIDEO ──
+  // Automatically injects YouTube video into any .page-hero on inner pages
+  const pageHero=document.querySelector('.page-hero');
+  if(pageHero){
+    const videoId=
+      hero.videoUrl&&hero.videoUrl.length===11&&!hero.videoUrl.includes('/')?
+      hero.videoUrl:'SZEflIVnhH8';
+    const showVideo=hero.showVideo!==false;
+
+    // Save existing content
+    const existingHTML=pageHero.innerHTML;
+    pageHero.innerHTML='';
+
+    // 1 — YouTube video layer
+    if(showVideo){
+      const vdiv=document.createElement('div');
+      vdiv.className='page-hero-video';
+      vdiv.innerHTML=`<iframe
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen loading="lazy">
+      </iframe>`;
+      pageHero.appendChild(vdiv);
+    }
+
+    // 2 — Light overlay so text stays readable
+    const overlay=document.createElement('div');
+    overlay.className='page-hero-overlay';
+    pageHero.appendChild(overlay);
+
+    // 3 — Content (on top)
+    const contentWrap=document.createElement('div');
+    contentWrap.className='page-hero-content';
+    contentWrap.innerHTML=existingHTML;
+    pageHero.appendChild(contentWrap);
+  }
+
   // ── NAVBAR SCROLL ──
   const navbar=document.getElementById('navbar');
   if(navbar){
     window.addEventListener('scroll',()=>{
-      if(window.scrollY>80)navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
+      navbar.classList.toggle('scrolled',window.scrollY>80);
     },{passive:true});
   }
 
   // ── HAMBURGER ──
   const ham=document.getElementById('hamburger');
-  if(ham)ham.addEventListener('click',()=>document.getElementById('nav-links')?.classList.toggle('open'));
+  if(ham)ham.addEventListener('click',()=>{
+    document.getElementById('nav-links')?.classList.toggle('open');
+  });
 
   // ── SCROLL REVEAL ──
   const reveal=()=>{
