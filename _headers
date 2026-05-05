@@ -8,3 +8,12 @@
 
 /admin.html
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/shared.js
+  Cache-Control: no-cache, no-store, must-revalidate
+/content.json
+  Cache-Control: no-cache, no-store, must-revalidate
+/*.html
+  Cache-Control: no-cache
+/assets/videos/*
+  Cache-Control: public, max-age=3600

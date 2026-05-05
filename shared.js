@@ -228,102 +228,47 @@
     </div>`;
   }
 
-  // ── PREMIUM MP4 PAGE HERO VIDEO ──
-  // Supports: {mp4, webm, poster}, direct .mp4/.webm URL/path, and YouTube as fallback.
-  function extractYouTubeId(input){
-    if(!input)return null;
-    const str=String(input).trim();
-    if(/^[A-Za-z0-9_-]{11}$/.test(str))return str;
-    const patterns=[
-      /youtube\.com\/embed\/([A-Za-z0-9_-]{11})/,
-      /youtube\.com\/watch\?[^"'<>]*v=([A-Za-z0-9_-]{11})/,
-      /youtu\.be\/([A-Za-z0-9_-]{11})/,
-      /youtube\.com\/shorts\/([A-Za-z0-9_-]{11})/,
-      /playlist=([A-Za-z0-9_-]{11})/,
-      /src=["'][^"']*\/embed\/([A-Za-z0-9_-]{11})/
-    ];
-    for(const re of patterns){const m=str.match(re);if(m&&m[1])return m[1];}
-    return null;
+  // ── V22 FINAL MP4 PAGE HERO VIDEO (NO HOME FALLBACK OVERWRITE) ──
+  // This version does NOT depend on content.json to decide the page video.
+  // It uses the current page name directly, so each page always loads its own file:
+  // home.mp4, about.mp4, services.mp4, odoo.mp4, industries.mp4, portfolio.mp4, blog.mp4, contact.mp4
+  function currentPageName(){
+    let name=location.pathname.split('/').pop().replace(/\.html$/i,'').toLowerCase();
+    if(!name || name==='index') name='home';
+    return name;
   }
-
-  function isVideoFile(str){return /\.(mp4|webm|mov)(\?|#|$)/i.test(String(str||''));}
-  function resolveHeroVideo(value, fallback){
-    const out={mp4:'', webm:'', poster:'', youtube:''};
-    const add=(v, allowOverride=false)=>{
-      if(!v)return;
-      if(typeof v==='object'){
-        const mp4=v.mp4||v.videoMp4||'';
-        const webm=v.webm||v.videoWebm||'';
-        const poster=v.poster||v.videoPoster||'';
-        const youtube=v.youtube||v.youtubeId||'';
-        if(mp4 && (allowOverride || !out.mp4))out.mp4=mp4;
-        if(webm && (allowOverride || !out.webm))out.webm=webm;
-        if(poster && (allowOverride || !out.poster))out.poster=poster;
-        if(youtube && (allowOverride || !out.youtube))out.youtube=youtube;
-        if(v.url||v.videoUrl)add(v.url||v.videoUrl, allowOverride);
-        return;
-      }
-      const str=String(v).trim();
-      if(!str)return;
-      if(/\.webm(\?|#|$)/i.test(str)){ if(allowOverride || !out.webm)out.webm=str; }
-      else if(isVideoFile(str)){ if(allowOverride || !out.mp4)out.mp4=str; }
-      else { const yt=extractYouTubeId(str); if(yt && (allowOverride || !out.youtube))out.youtube=yt; }
-    };
-    // Important: add the home fallback first, then override it with the current page video.
-    // Earlier versions added fallback last, causing home.mp4 to play on every page.
-    add(fallback);
-    add(value, true);
-    return out;
-  }
-
-  function createVideoLayer(video){
+  function makeMp4VideoLayer(pageName){
+    const safePages=['home','about','services','odoo','industries','portfolio','blog','contact'];
+    const name=safePages.includes(pageName)?pageName:'home';
     const vdiv=document.createElement('div');
     vdiv.className='page-hero-video';
-    if(video.mp4||video.webm){
-      const poster=video.poster?` poster="${video.poster}"`:'';
-      vdiv.innerHTML=`<video autoplay muted loop playsinline preload="metadata"${poster}>
-        ${video.webm?`<source src="${video.webm}" type="video/webm">`:''}
-        ${video.mp4?`<source src="${video.mp4}" type="video/mp4">`:''}
-      </video>`;
-    }else if(video.youtube){
-      const id=video.youtube;
-      vdiv.innerHTML=`<iframe
-        src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3&fs=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>`;
-    }
+    vdiv.setAttribute('data-video-page',name);
+    vdiv.innerHTML=`<video autoplay muted loop playsinline preload="auto" poster="assets/videos/${name}-poster.jpg">
+      <source src="assets/videos/${name}.mp4?v=22" type="video/mp4">
+    </video>`;
     return vdiv;
   }
 
-  // Detect current page name e.g. "about" from "about.html"
-  let pageName=location.pathname.split('/').pop().replace('.html','').toLowerCase();
-  if(!pageName||pageName==='index')pageName='home';
-
-  const showVideo=hero.showVideo!==false;
-  const fallbackHome={mp4:hero.videoMp4||hero.videoUrl||'', webm:hero.videoWebm||'', poster:hero.videoPoster||''};
-  const selectedVideo=resolveHeroVideo(pageVideos[pageName], fallbackHome);
-
+  const pageName=currentPageName();
   const pageHero=document.querySelector('.page-hero');
   if(pageHero){
     const existingHTML=pageHero.innerHTML;
     pageHero.innerHTML='';
-
-    // 1 — MP4/WebM video layer. YouTube only works as fallback.
-    if(showVideo&&(selectedVideo.mp4||selectedVideo.webm||selectedVideo.youtube)){
-      pageHero.appendChild(createVideoLayer(selectedVideo));
-    }
-
-    // 2 — Subtle overlay
+    pageHero.appendChild(makeMp4VideoLayer(pageName));
     const overlay=document.createElement('div');
     overlay.className='page-hero-overlay';
     pageHero.appendChild(overlay);
-
-    // 3 — Content on top
     const contentWrap=document.createElement('div');
     contentWrap.className='page-hero-content';
     contentWrap.innerHTML=existingHTML;
     pageHero.appendChild(contentWrap);
+    const vid=pageHero.querySelector('video');
+    if(vid){
+      const play=()=>{ const p=vid.play(); if(p&&p.catch)p.catch(()=>{}); };
+      vid.addEventListener('loadeddata', play, {once:true});
+      play();
+    }
   }
-
   // ── NAVBAR SCROLL ──
   const navbar=document.getElementById('navbar');
   if(navbar){
@@ -346,5 +291,113 @@
   };
   window.addEventListener('scroll',reveal,{passive:true});
   setTimeout(reveal,150);
+
+
+  // ── V21 FINAL FORCE PAGE-SPECIFIC MP4 VIDEO FIX ──
+  // This runs after all older content/video code and guarantees every page loads its own file.
+  function aimazeForceCorrectPageVideoV21(){
+    const VERSION = '21';
+    const cleanPage = (location.pathname.split('/').pop() || 'index.html').replace('.html','').toLowerCase();
+    const page = (!cleanPage || cleanPage === 'index') ? 'home' : cleanPage;
+    const validPages = ['home','about','services','odoo','industries','portfolio','blog','contact'];
+    const finalPage = validPages.includes(page) ? page : 'home';
+
+    function withVersion(url){
+      if(!url) return '';
+      return url + (url.includes('?') ? '&' : '?') + 'v=' + VERSION;
+    }
+
+    function getVideoConfig(){
+      const pv = (typeof pageVideos !== 'undefined' && pageVideos) ? pageVideos : {};
+      const h = (typeof hero !== 'undefined' && hero) ? hero : {};
+      let cfg = pv[finalPage] || {};
+      if(typeof cfg === 'string') cfg = {mp4: cfg};
+      if(finalPage === 'home'){
+        cfg = Object.assign({
+          mp4: h.videoMp4 || h.videoUrl || 'assets/videos/home.mp4',
+          webm: h.videoWebm || '',
+          poster: h.videoPoster || 'assets/videos/home-poster.jpg'
+        }, cfg || {});
+      }
+      return {
+        mp4: cfg.mp4 || cfg.videoMp4 || `assets/videos/${finalPage}.mp4`,
+        webm: cfg.webm || cfg.videoWebm || '',
+        poster: cfg.poster || cfg.videoPoster || `assets/videos/${finalPage}-poster.jpg`
+      };
+    }
+
+    function createOrUpdateVideo(container){
+      if(!container) return;
+      const cfg = getVideoConfig();
+      container.querySelectorAll('iframe').forEach(x=>x.remove());
+      let video = container.querySelector('video');
+      if(!video){
+        video = document.createElement('video');
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        container.appendChild(video);
+      }
+      video.setAttribute('autoplay','');
+      video.setAttribute('muted','');
+      video.setAttribute('loop','');
+      video.setAttribute('playsinline','');
+      video.muted = true;
+      video.poster = cfg.poster;
+      video.innerHTML = '';
+      if(cfg.webm){
+        const s1=document.createElement('source');
+        s1.src = withVersion(cfg.webm);
+        s1.type='video/webm';
+        video.appendChild(s1);
+      }
+      const s2=document.createElement('source');
+      s2.src = withVersion(cfg.mp4);
+      s2.type='video/mp4';
+      video.appendChild(s2);
+      video.style.position='absolute';
+      video.style.top='50%';
+      video.style.left='50%';
+      video.style.width='100%';
+      video.style.height='100%';
+      video.style.objectFit='cover';
+      video.style.transform='translate(-50%,-50%)';
+      video.style.opacity='.9';
+      video.style.pointerEvents='none';
+      video.onerror=function(){
+        container.style.backgroundImage = `url('${cfg.poster}')`;
+        container.style.backgroundSize = 'cover';
+        container.style.backgroundPosition = 'center';
+      };
+      try{
+        video.load();
+        const pr = video.play();
+        if(pr && pr.catch) pr.catch(()=>{});
+      }catch(e){}
+      container.setAttribute('data-aimaze-page-video', finalPage);
+    }
+
+    // Home page hero
+    const homeHeroWrap = document.getElementById('hero-video-wrap') || document.querySelector('.hero .hero-video');
+    createOrUpdateVideo(homeHeroWrap);
+
+    // Inner page hero
+    const pageHero = document.querySelector('.page-hero');
+    if(pageHero){
+      let layer = pageHero.querySelector('.page-hero-video');
+      if(!layer){
+        layer = document.createElement('div');
+        layer.className = 'page-hero-video';
+        pageHero.insertBefore(layer, pageHero.firstChild);
+      }
+      createOrUpdateVideo(layer);
+    }
+
+    console.log('[AimAze V21] page video loaded:', finalPage, getVideoConfig().mp4);
+  }
+  aimazeForceCorrectPageVideoV21();
+  setTimeout(aimazeForceCorrectPageVideoV21, 500);
 
 })();
