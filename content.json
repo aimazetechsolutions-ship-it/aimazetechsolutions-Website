@@ -3,8 +3,8 @@
     "name": "AimAze Tech Solutions",
     "tagline": "Enterprise Odoo ERP, Automation & Digital Transformation Partner in UAE",
     "email": "info@aimazetechsolutions.com",
-    "phone": "+971 XX XXX XXXX",
-    "whatsapp": "971XXXXXXXXX",
+    "phone": "",
+    "whatsapp": "",
     "address": "Dubai, UAE",
     "showTopbar": false,
     "linkedin": "#",
@@ -76,42 +76,42 @@
   ],
   "services": [
     {
-      "icon": "\ud83d\udcca",
+      "icon": "📊",
       "image": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "Odoo ERP Implementation",
       "text": "Module planning, configuration, migration, training and go-live support for CRM, sales, finance, HR, inventory and operations.",
       "link": "odoo.html"
     },
     {
-      "icon": "\u2699\ufe0f",
+      "icon": "⚙️",
       "image": "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "Odoo Customization",
       "text": "Custom workflows, dashboards, approvals, automated reports and business-specific modules built around your processes.",
       "link": "services.html"
     },
     {
-      "icon": "\ud83d\udcc8",
+      "icon": "📈",
       "image": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "CRM & Sales Automation",
       "text": "Lead management, pipeline stages, follow-ups, quotation workflow and full management visibility.",
       "link": "services.html"
     },
     {
-      "icon": "\ud83d\udcb0",
+      "icon": "💰",
       "image": "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "Finance Dashboards",
       "text": "CFO dashboards, receivable tracking, margin reporting, VAT workflows and real-time KPI visibility.",
       "link": "services.html"
     },
     {
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "Custom Software & Websites",
       "text": "Professional business websites, portals, internal tools and web applications built for growth.",
       "link": "services.html"
     },
     {
-      "icon": "\ud83d\udd27",
+      "icon": "🔧",
       "image": "https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=600",
       "title": "IT Support & Digital Advisory",
       "text": "Process review, automation roadmaps, integration planning and long-term technology support.",
@@ -120,7 +120,7 @@
   ],
   "why": {
     "heading": "Built for control, adoption and measurable business results.",
-    "text": "We combine ERP implementation with finance, operations and management reporting expertise, so the system is not only installed \u2014 it is used, controlled and improved after go-live.",
+    "text": "We combine ERP implementation with finance, operations and management reporting expertise, so the system is not only installed — it is used, controlled and improved after go-live.",
     "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
     "points": [
       {

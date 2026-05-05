@@ -56,16 +56,18 @@
     <div class="contact-form reveal-left">
       <h2>Send an inquiry</h2>
       <p>We typically respond within a few hours on business days.</p>
-      <form id="contact-form" action="https://formsubmit.co/info@aimazetechsolutions.com" method="POST" data-netlify="true" name="AimAze Website Inquiry">
+      <form id="contact-form" action="https://formsubmit.co/info@aimazetechsolutions.com" method="POST" name="AimAze Website Inquiry">
         <input type="hidden" name="_subject" value="New Website Inquiry - AimAze Tech Solutions">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_blacklist" value="spam, casino, crypto">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting AimAze Tech Solutions. We received your inquiry and will respond shortly.">
         <input type="hidden" name="_next" value="https://aimazetechsolutions.com/thank-you.html">
         <input type="hidden" name="form-name" value="AimAze Website Inquiry">
         <div class="form-grid">
           <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
           <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
-          <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+971 XX XXX XXXX"></div>
+          <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+971 50 976 8147"></div>
           <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Your company name"></div>
           <div class="form-group form-full"><label>Service Interested In</label>
             <select name="service">
@@ -81,8 +83,9 @@
           </div>
           <div class="form-group form-full"><label>Tell us about your requirement</label><textarea name="message" placeholder="Describe your current situation and what you'd like to improve..."></textarea></div>
         </div>
-        <button class="submit-btn" type="submit">Send Inquiry →</button>
+        <button class="submit-btn" type="submit" id="submit-btn">Send Inquiry →</button>
         <p class="status-msg" id="form-status"></p>
+        <p style="font-size:12px;color:#6d7789;text-align:center;margin-top:10px">If email delivery is not active yet, use the WhatsApp button for immediate contact.</p>
       </form>
     </div>
 
@@ -100,7 +103,7 @@
       <div class="info-card">
         <div class="info-icon">📞</div>
         <h4>Call</h4>
-        <p><a id="call-direct" href="tel:+971XXXXXXXXX">+971 XX XXX XXXX</a></p>
+        <p><a id="call-direct" href="tel:+971509768147">+971 50 976 8147</a></p>
       </div>
       <div class="info-card">
         <div class="info-icon">💬</div>
@@ -118,7 +121,7 @@
 </section>
 
 <footer class="footer" id="footer"><div id="footer-inner"></div></footer>
-<a class="whatsapp-float" href="contact.html" id="wa-btn">💬 <span>WhatsApp</span></a>
+<a class="whatsapp-float" href="contact.html" id="wa-btn"><span class="wa-icon">☎</span><span>WhatsApp</span></a>
 <script src="shared.js"></script>
 <script src="lead-capture.js"></script>
 </body>

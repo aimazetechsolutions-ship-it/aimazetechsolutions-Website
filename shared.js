@@ -62,12 +62,10 @@
 
   const wa=document.getElementById('wa-btn');
   const waDirect=document.getElementById('wa-direct');
-  const waNumber=(site.whatsapp||'').replace(/\D/g,'');
-  if(waNumber&&waNumber!=='971XXXXXXXXX'.replace(/\D/g,'')){
-    const waUrl='https://wa.me/'+waNumber+'?text='+encodeURIComponent(waMessage);
-    if(wa){wa.href=waUrl; wa.target='_blank'; wa.rel='noopener'; wa.addEventListener('click',()=>trackEvent('whatsapp_click','floating_button'));}
-    if(waDirect){waDirect.href=waUrl; waDirect.target='_blank'; waDirect.rel='noopener'; waDirect.addEventListener('click',()=>trackEvent('whatsapp_click','contact_page'));}
-  }
+  const waNumber=((site.whatsapp||'')+'').replace(/\D/g,'');
+  const waUrl='https://wa.me/'+waNumber+'?text='+encodeURIComponent(waMessage);
+  if(wa){wa.href=waUrl; wa.target='_blank'; wa.rel='noopener'; wa.setAttribute('aria-label','Chat with AimAze on WhatsApp'); wa.addEventListener('click',()=>trackEvent('whatsapp_click','floating_button'));}
+  if(waDirect){waDirect.href=waUrl; wa.target='_blank'; wa.rel='noopener'; wa.addEventListener('click',()=>trackEvent('whatsapp_click','contact_page'));}
   document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',()=>trackEvent('call_click',a.getAttribute('href'))));
   document.querySelectorAll('a[href="contact.html"], .nav-cta, .btn-primary').forEach(a=>a.addEventListener('click',()=>trackEvent('cta_click',a.textContent.trim())));
 
