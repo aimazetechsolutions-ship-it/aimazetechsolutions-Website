@@ -82,7 +82,7 @@
       document.body.appendChild(float);
     }
     float.href='#';
-    float.innerHTML=`<span class="wa-ring"></span><span class="wa-icon">💬</span><span class="wa-label">WhatsApp</span><small class="wa-mini-status">Online</small>`;
+    float.innerHTML=`<span class="wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" d="M16 .5C7.5.5.7 7.3.7 15.7c0 2.7.7 5.2 2 7.4L.4 31.5l8.7-2.2c2.1 1.1 4.5 1.7 6.9 1.7 8.5 0 15.3-6.8 15.3-15.3S24.5.5 16 .5zm0 27.6c-2.3 0-4.6-.6-6.6-1.8l-.5-.3-5.2 1.3 1.4-5.1-.3-.5c-1.2-2-1.9-4.3-1.9-6.7C2.9 7.8 8.8 1.9 16 1.9s13.1 5.9 13.1 13.1S23.2 28.1 16 28.1zm7.2-9.7c-.4-.2-2.3-1.1-2.6-1.3-.3-.1-.5-.2-.7.2-.2.4-.8 1.3-1 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-2-.8-.7-1.4-1.6-1.6-1.9-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.7-1.8-1-2.5-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.6 5.6 5 .8.4 1.5.6 2 .8.8.2 1.5.2 2.1.1.6-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5z"/></svg></span><span class="wa-label">WhatsApp</span><small class="wa-mini-status">Online</small>`;
     float.setAttribute('aria-label','Open AimAze WhatsApp chat');
 
     if(!document.getElementById('wa-chat-popup')){
@@ -133,11 +133,12 @@
       }
       start.addEventListener('click',()=>trackEvent('whatsapp_popup_cta',waNumber?'whatsapp':'contact_form'));
     }
-    float.addEventListener('click',(e)=>{
+    float.onclick=(e)=>{
       e.preventDefault();
       trackEvent('whatsapp_popup_open','floating_button');
       popup.classList.add('open');
-    });
+      return false;
+    };
     if(close){
       close.addEventListener('click',()=>popup.classList.remove('open'));
     }
