@@ -46,46 +46,54 @@
     "videoPoster": "assets/videos/home-poster.jpg"
   },
   "pageVideos": {
-    "note": "Premium MP4 background videos. Upload optimized videos to assets/videos/. You may also use a full https MP4 URL. YouTube still works as fallback only.",
+    "note": "Different premium MP4 background video for each page. Replace files in assets/videos/ with substance-specific videos. See PAGE_SPECIFIC_VIDEO_GUIDE.txt.",
     "home": {
       "mp4": "assets/videos/home.mp4",
       "webm": "",
-      "poster": "assets/videos/home-poster.jpg"
+      "poster": "assets/videos/home-poster.jpg",
+      "recommendedSubstance": "Executive digital transformation / ERP management video"
     },
     "about": {
       "mp4": "assets/videos/about.mp4",
       "webm": "",
-      "poster": "assets/videos/about-poster.jpg"
+      "poster": "assets/videos/about-poster.jpg",
+      "recommendedSubstance": "Professional team and consulting discussion video"
     },
     "services": {
       "mp4": "assets/videos/services.mp4",
       "webm": "",
-      "poster": "assets/videos/services-poster.jpg"
+      "poster": "assets/videos/services-poster.jpg",
+      "recommendedSubstance": "Software, automation and IT services video"
     },
     "odoo": {
       "mp4": "assets/videos/odoo.mp4",
       "webm": "",
-      "poster": "assets/videos/odoo-poster.jpg"
+      "poster": "assets/videos/odoo-poster.jpg",
+      "recommendedSubstance": "ERP, CRM, finance dashboard and business data video"
     },
     "industries": {
       "mp4": "assets/videos/industries.mp4",
       "webm": "",
-      "poster": "assets/videos/industries-poster.jpg"
+      "poster": "assets/videos/industries-poster.jpg",
+      "recommendedSubstance": "Travel, real estate, trading and multi-industry operations video"
     },
     "portfolio": {
       "mp4": "assets/videos/portfolio.mp4",
       "webm": "",
-      "poster": "assets/videos/portfolio-poster.jpg"
+      "poster": "assets/videos/portfolio-poster.jpg",
+      "recommendedSubstance": "Case studies, project delivery and results video"
     },
     "blog": {
       "mp4": "assets/videos/blog.mp4",
       "webm": "",
-      "poster": "assets/videos/blog-poster.jpg"
+      "poster": "assets/videos/blog-poster.jpg",
+      "recommendedSubstance": "Business insights, research and technology content video"
     },
     "contact": {
       "mp4": "assets/videos/contact.mp4",
       "webm": "",
-      "poster": "assets/videos/contact-poster.jpg"
+      "poster": "assets/videos/contact-poster.jpg",
+      "recommendedSubstance": "Customer support, consultation and client contact video"
     }
   },
   "stats": [
