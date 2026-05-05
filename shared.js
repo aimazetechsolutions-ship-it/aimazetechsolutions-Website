@@ -36,7 +36,7 @@
   const topbar=document.getElementById('topbar');
   if(topbar){
     if(site.showTopbar===false){
-      topbar.style.display='none';
+      topbar.remove();
     } else {
       topbar.innerHTML=`<span>${site.tagline||''}</span>
       <a href="contact.html">Book free process analysis</a>`;

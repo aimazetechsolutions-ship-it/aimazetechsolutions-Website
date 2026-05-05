@@ -22,3 +22,6 @@ Latest Fixes:
 - Added high-conversion WhatsApp floating button with desktop label.
 - Added local call/CTA/WhatsApp tracking and lead-dashboard.html for testing.
 - For production, connect window.AIMAZE_LEAD_ENDPOINT to Odoo CRM webhook.
+
+
+v4 update: Removed the top gradient announcement bar from every page. The navbar now starts directly at the top.
