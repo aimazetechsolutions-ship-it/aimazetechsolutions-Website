@@ -56,11 +56,28 @@
       `<a class="nav-cta" href="${nav.ctaLink||'contact.html'}">${nav.ctaLabel||'Contact Us'}</a>`;
   }
 
-  // ── WHATSAPP ──
-  const wa=document.getElementById('wa-btn');
-  if(wa&&site.whatsapp&&site.whatsapp!=='YOUR_WHATSAPP_NUMBER'){
-    wa.href='https://wa.me/'+site.whatsapp+'?text='+encodeURIComponent('Hello AimAze, I need information about Odoo ERP / software services.');
+  // ── WHATSAPP + BASIC CALL/LEAD TRACKING ──
+  const waMessage='Hello AimAze, I need Odoo ERP / software consultation for my business.';
+  function trackEvent(type, detail){
+    try{
+      const key='aimaze_lead_events';
+      const events=JSON.parse(localStorage.getItem(key)||'[]');
+      events.push({type, detail:detail||'', page:location.pathname, time:new Date().toISOString()});
+      localStorage.setItem(key, JSON.stringify(events.slice(-500)));
+    }catch(e){}
   }
+  window.aimazeTrackEvent=trackEvent;
+
+  const wa=document.getElementById('wa-btn');
+  const waDirect=document.getElementById('wa-direct');
+  const waNumber=(site.whatsapp||'').replace(/\D/g,'');
+  if(waNumber&&waNumber!=='971XXXXXXXXX'.replace(/\D/g,'')){
+    const waUrl='https://wa.me/'+waNumber+'?text='+encodeURIComponent(waMessage);
+    if(wa){wa.href=waUrl; wa.target='_blank'; wa.rel='noopener'; wa.addEventListener('click',()=>trackEvent('whatsapp_click','floating_button'));}
+    if(waDirect){waDirect.href=waUrl; waDirect.target='_blank'; waDirect.rel='noopener'; waDirect.addEventListener('click',()=>trackEvent('whatsapp_click','contact_page'));}
+  }
+  document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',()=>trackEvent('call_click',a.getAttribute('href'))));
+  document.querySelectorAll('a[href="contact.html"], .nav-cta, .btn-primary').forEach(a=>a.addEventListener('click',()=>trackEvent('cta_click',a.textContent.trim())));
 
   // ── FOOTER ──
   const footer=document.getElementById('footer-inner');

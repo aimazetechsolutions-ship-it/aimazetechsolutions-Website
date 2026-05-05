@@ -486,6 +486,15 @@ img{max-width:100%;display:block}
   .footer-grid{grid-template-columns:1fr}
   .hero h1{font-size:42px}
 }
+
+/* ENTERPRISE TRUST STRIP */
+.trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px clamp(20px,6vw,90px);background:#f8fcfd;border-bottom:1px solid #e8f0f7}
+.trust-item{padding:18px 20px;border-radius:16px;background:#fff;border:1px solid #e8f0f7;font-weight:800;color:#344154;text-align:center;box-shadow:0 12px 35px rgba(16,23,41,.04)}
+.trust-item::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:var(--grad);color:#fff;font-size:12px;vertical-align:middle}
+.whatsapp-float span{display:none}
+@media(min-width:780px){.whatsapp-float{width:auto!important;border-radius:999px!important;padding:0 18px!important;gap:10px;font-size:20px!important}.whatsapp-float span{display:inline;font-size:14px;font-weight:800;color:#fff}}
+@media(max-width:900px){.trust-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.trust-strip{grid-template-columns:1fr}}
 </style>
 
 <script type="application/ld+json">
@@ -548,15 +557,20 @@ img{max-width:100%;display:block}
 </section>
 
 
-<section class="trust-strip" aria-label="Enterprise capabilities">
-  <div class="trust-item">Odoo CRM & ERP</div>
-  <div class="trust-item">Finance Controls</div>
-  <div class="trust-item">Lead Automation</div>
-  <div class="trust-item">UAE VAT Focus</div>
+<section class="trust-strip" aria-label="Enterprise capabilities" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px clamp(20px,6vw,90px);background:#f8fcfd;border-bottom:1px solid #e8f0f7">
+  <div class="trust-item" style="padding:18px 20px;border-radius:16px;background:#fff;border:1px solid #e8f0f7;font-weight:800;color:#344154;text-align:center;box-shadow:0 12px 35px rgba(16,23,41,.04)">✓ Odoo CRM & ERP</div>
+  <div class="trust-item" style="padding:18px 20px;border-radius:16px;background:#fff;border:1px solid #e8f0f7;font-weight:800;color:#344154;text-align:center;box-shadow:0 12px 35px rgba(16,23,41,.04)">✓ Finance Controls</div>
+  <div class="trust-item" style="padding:18px 20px;border-radius:16px;background:#fff;border:1px solid #e8f0f7;font-weight:800;color:#344154;text-align:center;box-shadow:0 12px 35px rgba(16,23,41,.04)">✓ Lead Automation</div>
+  <div class="trust-item" style="padding:18px 20px;border-radius:16px;background:#fff;border:1px solid #e8f0f7;font-weight:800;color:#344154;text-align:center;box-shadow:0 12px 35px rgba(16,23,41,.04)">✓ UAE VAT Focus</div>
 </section>
 
 <!-- STATS -->
-<div class="stats-bar" id="stats-bar"></div>
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Core ERP Capabilities</div></div>
+  <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Enterprise Service Areas</div></div>
+  <div class="stat-item"><div class="stat-num">24<span class="suffix">/7</span></div><div class="stat-label">Website Lead Capture</div></div>
+  <div class="stat-item"><div class="stat-num">5<span class="suffix">%</span></div><div class="stat-label">UAE VAT Workflow Focus</div></div>
+</div>
 
 <!-- SERVICES -->
 <section class="section light" id="services-section">
@@ -670,7 +684,7 @@ img{max-width:100%;display:block}
 </footer>
 
 <!-- WHATSAPP -->
-<a class="whatsapp-float" href="contact.html" id="wa-btn" title="WhatsApp">💬</a>
+<a class="whatsapp-float" href="contact.html" id="wa-btn" title="WhatsApp">💬 <span>WhatsApp</span></a>
 
 <script>
 // ── LOAD CONTENT ──
@@ -739,12 +753,20 @@ function applyHero(h){
 
 function buildStats(stats){
   const el=document.getElementById('stats-bar');
-  el.innerHTML=stats.map((s,i)=>`
+  if(!el)return;
+  const safeStats = Array.isArray(stats) && stats.length ? stats : [
+    {number:'4', suffix:'', label:'Core ERP Capabilities'},
+    {number:'6', suffix:'', label:'Enterprise Service Areas'},
+    {number:'24', suffix:'/7', label:'Website Lead Capture'},
+    {number:'5', suffix:'%', label:'UAE VAT Workflow Focus'}
+  ];
+  el.innerHTML=safeStats.map((s,i)=>`
     <div class="stat-item reveal delay-${i+1}">
-      <div class="stat-num"><span class="counter" data-target="${s.number}">0</span><span class="suffix">${s.suffix||''}</span></div>
-      <div class="stat-label">${s.label}</div>
+      <div class="stat-num">${s.number||''}<span class="suffix">${s.suffix||''}</span></div>
+      <div class="stat-label">${s.label||''}</div>
     </div>`).join('');
 }
+
 
 function buildServices(services){
   const el=document.getElementById('services-grid');
@@ -828,25 +850,6 @@ const revealEls=()=>{
   });
 };
 window.addEventListener('scroll',revealEls,{passive:true});
-
-// ── COUNTER ANIMATION ──
-function animateCounters(){
-  document.querySelectorAll('.counter').forEach(el=>{
-    const target=+el.dataset.target;
-    let current=0;
-    const step=target/60;
-    const timer=setInterval(()=>{
-      current+=step;
-      if(current>=target){current=target;clearInterval(timer)}
-      el.textContent=Math.floor(current);
-    },25);
-  });
-}
-const statsObserver=new IntersectionObserver(entries=>{
-  if(entries[0].isIntersecting){animateCounters();statsObserver.disconnect()}
-},{threshold:.3});
-const statsEl=document.getElementById('stats-bar');
-if(statsEl)statsObserver.observe(statsEl);
 
 // ── INIT ──
 loadContent().then(()=>{

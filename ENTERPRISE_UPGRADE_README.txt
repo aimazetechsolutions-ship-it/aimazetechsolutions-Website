@@ -14,3 +14,11 @@ Important next steps before going live:
 - Replace placeholder testimonials/case studies with approved real client names or keep them as anonymous case studies.
 - Configure an Odoo lead endpoint or serverless form handler.
 - Never expose GitHub tokens or admin passwords in browser-side code.
+
+
+Latest Fixes:
+- Fixed homepage NaN statistics by replacing text stats with numeric enterprise KPIs.
+- Added styled enterprise capability strip under hero.
+- Added high-conversion WhatsApp floating button with desktop label.
+- Added local call/CTA/WhatsApp tracking and lead-dashboard.html for testing.
+- For production, connect window.AIMAZE_LEAD_ENDPOINT to Odoo CRM webhook.

@@ -54,24 +54,24 @@
   },
   "stats": [
     {
-      "number": "ERP",
+      "number": "4",
       "suffix": "",
-      "label": "Implementation & Customization"
+      "label": "Core ERP Capabilities"
     },
     {
-      "number": "CRM",
+      "number": "6",
       "suffix": "",
-      "label": "Lead-to-Deal Automation"
+      "label": "Enterprise Service Areas"
     },
     {
-      "number": "CFO",
-      "suffix": "",
-      "label": "Finance Dashboards"
+      "number": "24",
+      "suffix": "/7",
+      "label": "Website Lead Capture"
     },
     {
-      "number": "UAE",
-      "suffix": "",
-      "label": "Business & VAT Focus"
+      "number": "5",
+      "suffix": "%",
+      "label": "UAE VAT Workflow Focus"
     }
   ],
   "services": [
