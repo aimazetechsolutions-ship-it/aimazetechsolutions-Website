@@ -446,8 +446,10 @@ img{max-width:100%;display:block}
   display:flex;align-items:center;justify-content:center;
   font-size:16px;transition:.25s;
   border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.72);
 }
-.social-link:hover{background:var(--primary);border-color:var(--primary)}
+.social-link svg{width:18px;height:18px;fill:currentColor}
+.social-link:hover{background:var(--primary);border-color:var(--primary);color:#fff}
 
 /* ── WHATSAPP FLOAT ── */
 .whatsapp-float{
@@ -692,9 +694,15 @@ img{max-width:100%;display:block}
       <img src="assets/aimaze-logo-transparent.png" alt="AimAze">
       <p>Odoo ERP, software, websites and digital transformation services for UAE and international businesses.</p>
       <div class="social-links" style="margin-top:20px">
-        <a class="social-link" href="#">💼</a>
-        <a class="social-link" href="#">📘</a>
-        <a class="social-link" href="#">📸</a>
+        <a class="social-link" href="#" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6.5 0h3.82v1.64h.05c.53-.96 1.83-1.97 3.77-1.97 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.53c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93V21h-4V9Z"/></svg>
+        </a>
+        <a class="social-link" href="#" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.3h2.45l.37-2.85H13.5V9.03c0-.82.23-1.38 1.41-1.38h1.5V5.1c-.26-.03-1.15-.11-2.19-.11-2.17 0-3.66 1.32-3.66 3.76v2.1H8.1v2.85h2.46V21h2.94Z"/></svg>
+        </a>
+        <a class="social-link" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.35A4.65 4.65 0 1 1 12 16.65a4.65 4.65 0 0 1 0-9.3Zm0 2A2.65 2.65 0 1 0 12 14a2.65 2.65 0 0 0 0-5.3Zm4.9-2.45a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 16.9 6.9Z"/></svg>
+        </a>
       </div>
     </div>
     <div class="footer-col">

@@ -188,15 +188,31 @@
   // ── FOOTER ──
   const footer=document.getElementById('footer-inner');
   if(footer){
+    const socialItems=[
+      {
+        label:'LinkedIn',
+        url:site.linkedin,
+        icon:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.76V20h3.18V8.98ZM7.2 5.58C7.18 4.64 6.5 3.92 5.42 3.92c-1.08 0-1.79.72-1.79 1.66 0 .91.68 1.66 1.75 1.66h.02c1.11 0 1.8-.75 1.8-1.66ZM20.38 13.68c0-3.36-1.79-4.92-4.18-4.92-1.93 0-2.79 1.06-3.27 1.81V8.98H9.75c.04 1.03 0 11.02 0 11.02h3.18v-6.15c0-.33.02-.66.12-.89.26-.66.86-1.34 1.86-1.34 1.31 0 1.84 1.01 1.84 2.49V20h3.18l.45-6.32Z"/></svg>'
+      },
+      {
+        label:'Facebook',
+        url:site.facebook,
+        icon:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.15 8.62V6.9c0-.84.56-1.04.95-1.04h2.42V2.13L14.19 2.1c-3.7 0-4.54 2.77-4.54 4.54v1.98H7.5v3.85h2.15V22h4.5v-9.53h3.04l.4-3.85h-3.44Z"/></svg>'
+      },
+      {
+        label:'Instagram',
+        url:site.instagram,
+        icon:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 2.18a1.32 1.32 0 1 1 0 2.64 1.32 1.32 0 0 1 0-2.64ZM12 7.25A4.75 4.75 0 1 1 12 16.75 4.75 4.75 0 0 1 12 7.25Zm0 2A2.75 2.75 0 1 0 12 14.75 2.75 2.75 0 0 0 12 9.25Z"/></svg>'
+      }
+    ];
+    const socialMarkup=socialItems.map(item=>`<a class="social-link" href="${item.url&&item.url!=='#'?item.url:'#'}" aria-label="${item.label}" title="${item.label}" ${item.url&&item.url!=='#'?'target="_blank" rel="noopener"':''}>${item.icon}</a>`).join('');
     footer.innerHTML=`
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/aimaze-logo-transparent.png" alt="AimAze">
         <p>Odoo ERP, software, websites and digital transformation services for UAE and international businesses.</p>
         <div class="social-links" style="margin-top:20px">
-          <a class="social-link" href="#">💼</a>
-          <a class="social-link" href="#">📘</a>
-          <a class="social-link" href="#">📸</a>
+          ${socialMarkup}
         </div>
       </div>
       <div class="footer-col">
