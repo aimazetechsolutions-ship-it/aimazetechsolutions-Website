@@ -194,8 +194,8 @@ body{font-family:'Inter',sans-serif;background:#0b0f1a;color:#e2e8f0;min-height:
         </div>
         <div class="panel-section">
           <h3>Homepage Background Video</h3>
-          <div class="form-row single"><div class="form-group"><label>Video File Path</label><input type="text" id="hero-video" placeholder="assets/videos/home.mp4"><p class="form-hint">Relative path to video file uploaded in your GitHub assets/videos/ folder</p></div></div>
-          <div class="form-row single"><div class="form-group"><label>Poster Image (shown while video loads)</label><input type="text" id="hero-poster" placeholder="assets/videos/home-poster.jpg"></div></div>
+          <div class="form-row single"><div class="form-group"><label>MP4 Fallback Video File Path</label><input type="text" id="hero-video" placeholder="assets/videos/home.mp4"><p class="form-hint">The website now prefers high-quality WebM hero videos and keeps this MP4 as fallback.</p></div></div>
+          <div class="form-row single"><div class="form-group"><label>Poster Image (shown while video loads)</label><input type="text" id="hero-poster" placeholder="assets/videos/home-hq-poster.jpg"></div></div>
           <div class="toggle-wrap">
             <label class="toggle"><input type="checkbox" id="hero-show-video" checked><span class="toggle-slider"></span></label>
             <span class="toggle-label">Show background video</span>
@@ -488,7 +488,7 @@ function populateForms(){
   setV('hero-cta2-text', h.secondaryCta||'');
   setV('hero-cta2-link', h.secondaryCtaLink||'odoo.html');
   setV('hero-video', h.videoMp4||h.videoUrl||'assets/videos/home.mp4');
-  setV('hero-poster', h.videoPoster||'assets/videos/home-poster.jpg');
+  setV('hero-poster', h.videoPoster||'assets/videos/home-hq-poster.jpg');
   document.getElementById('hero-show-video').checked = h.showVideo!==false;
   // Stats
   buildEditor('stats-editor', C.stats||[], renderStat);
@@ -591,15 +591,16 @@ function collectContent(){
   const industries=document.getElementById('industries-list').value.split('\n').map(s=>s.trim()).filter(Boolean);
 
   const pvPages=['about','services','odoo','industries','portfolio','blog','contact'];
-  const pageVideos={note:'MP4 video paths for each page hero. Upload files to assets/videos/ in GitHub.'};
+  const pageVideos={note:'High-quality WebM videos are preferred for each page hero. MP4 paths are kept as fallback.'};
   pvPages.forEach(p=>{
     const existing=C.pageVideos&&C.pageVideos[p]||{};
     const mp4=gV('pv-'+p)||(typeof existing==='object'?existing.mp4:existing)||`assets/videos/${p}.mp4`;
-    pageVideos[p]={mp4, webm:typeof existing==='object'?existing.webm||'':'', poster:typeof existing==='object'?existing.poster||`assets/videos/${p}-poster.jpg`:`assets/videos/${p}-poster.jpg`};
+    pageVideos[p]={mp4, webm:typeof existing==='object'?existing.webm||`assets/videos/${p}-hq.webm`:`assets/videos/${p}-hq.webm`, poster:typeof existing==='object'?existing.poster||`assets/videos/${p}-hq-poster.jpg`:`assets/videos/${p}-hq-poster.jpg`};
   });
 
   const mp4Path=gV('hero-video')||'assets/videos/home.mp4';
-  pageVideos.home={mp4:mp4Path,webm:'',poster:gV('hero-poster')||'assets/videos/home-poster.jpg'};
+  const existingHome=C.pageVideos&&C.pageVideos.home||{};
+  pageVideos.home={mp4:mp4Path,webm:typeof existingHome==='object'?existingHome.webm||'assets/videos/home-hq.webm':'assets/videos/home-hq.webm',poster:gV('hero-poster')||'assets/videos/home-hq-poster.jpg'};
 
   return{
     site:{
@@ -622,8 +623,8 @@ function collectContent(){
       eyebrow:gV('hero-eyebrow'),heading:gV('hero-heading'),subheading:gV('hero-sub'),
       text:gV('hero-text'),primaryCta:gV('hero-cta1-text'),primaryCtaLink:gV('hero-cta1-link'),
       secondaryCta:gV('hero-cta2-text'),secondaryCtaLink:gV('hero-cta2-link'),
-      videoUrl:mp4Path,videoMp4:mp4Path,videoWebm:'',
-      videoPoster:gV('hero-poster')||'assets/videos/home-poster.jpg',
+      videoUrl:mp4Path,videoMp4:mp4Path,videoWebm:typeof existingHome==='object'?existingHome.webm||'assets/videos/home-hq.webm':'assets/videos/home-hq.webm',
+      videoPoster:gV('hero-poster')||'assets/videos/home-hq-poster.jpg',
       showVideo:document.getElementById('hero-show-video').checked
     },
     stats, services,
