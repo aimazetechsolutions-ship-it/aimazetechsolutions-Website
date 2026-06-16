@@ -36,6 +36,23 @@
   document.querySelectorAll('.topbar,#topbar').forEach(el=>el.remove());
 
   // ── NAV ──
+  function normalizePageUrl(url){
+    const parsed=new URL(url, window.location.origin);
+    const file=(parsed.pathname.split('/').pop()||'index.html').toLowerCase();
+    return file || 'index.html';
+  }
+
+  function markActiveNav(){
+    const current=normalizePageUrl(window.location.href);
+    document.querySelectorAll('#nav-links a').forEach(link=>{
+      const target=normalizePageUrl(link.getAttribute('href')||'');
+      const isActive=(current===target) || (current==='' && target==='index.html');
+      link.classList.toggle('is-active',isActive);
+      if(isActive) link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
   const navLinks=document.getElementById('nav-links');
   if(navLinks){
     const links=(nav.links||[
@@ -46,6 +63,7 @@
     ]);
     navLinks.innerHTML=links.map(l=>`<a href="${l.url}">${l.label}</a>`).join('')+
       `<a class="nav-cta" href="${nav.ctaLink||'contact.html'}">${nav.ctaLabel||'Contact Us'}</a>`;
+    markActiveNav();
   }
 
   // ── PREMIUM WHATSAPP LIVE CHAT + TRACKING ──
