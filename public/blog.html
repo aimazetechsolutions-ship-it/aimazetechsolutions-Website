@@ -57,9 +57,13 @@
 <section class="section light">
   <div class="blog-subscribe reveal">
     <p>📌 Full articles coming soon — subscribe below to be notified.</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="82feea8f-629e-4ec9-b948-5df4275e5d6e">
+      <input type="hidden" name="subject" value="New Blog Subscription — AimAze Tech Solutions">
+      <input type="hidden" name="from_name" value="AimAze Website">
+      <input type="hidden" name="replyto" value="info@aimazetechsolutions.com">
       <input type="email" name="email" placeholder="you@company.com" aria-label="Email address for blog updates" required>
-      <input type="hidden" name="_subject" value="Blog subscription — AimAze Tech Solutions">
+      <input type="checkbox" name="botcheck" style="display:none">
       <button type="submit">Subscribe</button>
     </form>
   </div>

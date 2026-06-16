@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact Us | Free Odoo Consultation — AimAze Tech Solutions Dubai</title>
+<title>Contact Us | Free Odoo Consultation — AimAze Tech Solutions</title>
 <meta name="robots" content="index, follow">
-<meta name="description" content="Contact AimAze Tech Solutions in Dubai — book a free Odoo ERP consultation or discuss your digital transformation project. UAE & international inquiries welcome.">
-<meta property="og:title" content="Contact AimAze Tech Solutions | Free Odoo Consultation — Dubai UAE">
+<meta name="description" content="Contact AimAze Tech Solutions in Lahore, Pakistan — book a free Odoo ERP consultation or discuss your digital transformation project. UAE, Pakistan and international inquiries welcome.">
+<meta property="og:title" content="Contact AimAze Tech Solutions | Free Odoo Consultation">
 <meta property="og:description" content="Contact AimAze Tech Solutions to book a free Odoo ERP consultation or discuss your software, automation or digital transformation project.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.aimazetechsolutions.com/contact.html">
@@ -78,11 +78,13 @@
         <button onclick="resetForm()" style="padding:12px 24px;border-radius:10px;border:none;background:var(--grad);color:#fff;font-weight:700;cursor:pointer;font-size:14px">Send Another Message</button>
       </div>
 
-      <!-- TODO: Replace YOUR_FORM_ID with your Formspree endpoint after signing up at https://formspree.io -->
       <!-- FORM -->
-      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:block">
-        <input type="hidden" name="_subject" value="New Inquiry — AimAze Tech Solutions">
-        <input type="hidden" name="_next" value="https://www.aimazetechsolutions.com/contact.html?sent=true">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="display:block">
+        <input type="hidden" name="access_key" value="82feea8f-629e-4ec9-b948-5df4275e5d6e">
+        <input type="hidden" name="subject" value="New Website Inquiry — AimAze Tech Solutions">
+        <input type="hidden" name="from_name" value="AimAze Website">
+        <input type="hidden" name="replyto" value="info@aimazetechsolutions.com">
+        <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="form-grid">
           <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
@@ -124,19 +126,19 @@
         <h4>Location</h4>
         <address style="font-style:normal;color:#6d7789;font-size:14px;line-height:1.6">
           <strong style="color:#101729">AimAze Tech Solutions LLC</strong><br>
-          Dubai, United Arab Emirates<br>
+          Lahore, Pakistan<br>
+          Serving clients in UAE, Pakistan and internationally<br>
           <a href="mailto:info@aimazetechsolutions.com">info@aimazetechsolutions.com</a>
         </address>
-        <p style="margin-top:12px">Lahore, Pakistan<br>Serving clients globally</p>
         <div class="map-embed" style="width:100%;height:300px;border-radius:12px;overflow:hidden;margin-top:20px;">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.3074729801!2d54.89784115!3d25.07633445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=74.2487%2C31.4604%2C74.4687%2C31.5804&amp;layer=mapnik&amp;marker=31.5204%2C74.3587"
             width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="AimAze Tech Solutions — Dubai, UAE">
+            title="AimAze Tech Solutions — Lahore, Pakistan">
           </iframe>
         </div>
-        <!-- TODO: Update the Maps embed src with exact office coordinates once confirmed -->
+        <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&query=Lahore%2C%20Pakistan" target="_blank" rel="noopener">Open location in Google Maps →</a></p>
       </div>
       <div class="info-card">
         <div class="info-icon">📞</div>
@@ -165,16 +167,48 @@
 </a>
 <script src="shared.js?v=29"></script>
 <script>
-if (window.location.search.includes('sent=true')) {
-  document.getElementById('form-success').style.display = 'block';
-  document.getElementById('contact-form').style.display = 'none';
-}
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const btnText = document.getElementById('btn-text');
+const btnLoading = document.getElementById('btn-loading');
+const formError = document.getElementById('form-error');
+
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  formError.style.display = 'none';
+  submitBtn.disabled = true;
+  btnText.style.display = 'none';
+  btnLoading.style.display = 'inline';
+
+  try {
+    const formData = new FormData(contactForm);
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      contactForm.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      contactForm.reset();
+    } else {
+      throw new Error(result.message || 'Unable to send inquiry.');
+    }
+  } catch (error) {
+    formError.textContent = 'Something went wrong. Please email us directly at info@aimazetechsolutions.com';
+    formError.style.display = 'block';
+  } finally {
+    submitBtn.disabled = false;
+    btnText.style.display = 'inline';
+    btnLoading.style.display = 'none';
+  }
+});
 
 function resetForm(){
   document.getElementById('form-success').style.display = 'none';
-  const form = document.getElementById('contact-form');
-  form.reset();
-  form.style.display = 'block';
+  contactForm.reset();
+  contactForm.style.display = 'block';
 }
 </script>
 </body>
