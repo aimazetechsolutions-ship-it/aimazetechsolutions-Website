@@ -118,6 +118,7 @@
   }
 
   function ensureWhatsappChat(){
+    if(document.querySelector('.aimaze-whatsapp-float')) return;
     injectWhatsappStyles();
 
     // Remove every old/duplicate WhatsApp launcher and chat box, including older homepage versions.

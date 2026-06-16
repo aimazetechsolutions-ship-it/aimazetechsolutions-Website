@@ -1,9 +1,27 @@
+<!--
+  SECURITY NOTE — admin.html
+  ═══════════════════════════════════════════════════════════
+  This page should be protected using Cloudflare Access, NOT a 
+  JavaScript password check. 
+  
+  To set up properly:
+  1. Go to Cloudflare Dashboard → Zero Trust → Access → Applications
+  2. Add Application → Self-hosted
+  3. Domain: aimazetechsolutions.com | Path: /admin.html
+  4. Set up Google SSO or One-Time PIN policy
+  5. Only your email will be allowed through
+  
+  This is free on Cloudflare's Zero Trust free tier (up to 50 users).
+  Until you do this, remove any JS-based password check as it provides
+  zero real security — the source code is visible to anyone.
+  ═══════════════════════════════════════════════════════════
+-->
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>AimAze Admin Panel</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — AimAze Tech Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
@@ -120,6 +138,10 @@ body{font-family:'Inter',sans-serif;background:#0b0f1a;color:#e2e8f0;min-height:
 </style>
 </head>
 <body>
+<div style="background:#ff4444;color:#fff;padding:12px 20px;font-weight:bold;text-align:center;">
+  WARNING: This page uses client-side password protection which is NOT secure. 
+  Please enable Cloudflare Access for proper protection. See HTML comments for instructions.
+</div>
 
 <!-- ── LOGIN ── -->
 <div id="login-screen">
