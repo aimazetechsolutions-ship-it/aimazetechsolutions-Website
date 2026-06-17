@@ -42,7 +42,7 @@
     "videoUrl": "/assets/videos/home.mp4",
     "videoMp4": "/assets/videos/home.mp4",
     "videoWebm": "",
-    "videoPoster": "/assets/videos/home-hq-poster.jpg",
+    "videoPoster": "/assets/videos/home-hq-poster.jpg?v=31",
     "showVideo": true
   },
   "stats": [
@@ -229,7 +229,7 @@
     "home": {
       "mp4": "/assets/videos/home.mp4",
       "webm": "",
-      "poster": "/assets/videos/home-hq-poster.jpg"
+      "poster": "/assets/videos/home-hq-poster.jpg?v=31"
     }
   },
   "nav": {
