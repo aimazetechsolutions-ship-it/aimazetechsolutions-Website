@@ -192,9 +192,9 @@
   "pageVideos": {
     "note": "High-quality stock WebM videos are preferred for each page hero. Original MP4 files remain as fallback.",
     "about": {
-      "mp4": "assets/videos/portfolio.mp4",
-      "webm": "assets/videos/portfolio-hq.webm",
-      "poster": "assets/videos/portfolio-hq-poster.jpg"
+      "mp4": "assets/videos/about.mp4",
+      "webm": "assets/videos/about-hq.webm",
+      "poster": "assets/videos/about-hq-poster.jpg"
     },
     "services": {
       "mp4": "assets/videos/services.mp4",
@@ -229,7 +229,7 @@
     "home": {
       "mp4": "/assets/videos/home-main-20260617.mp4",
       "webm": "",
-      "poster": "/assets/videos/home-main-20260617-poster.jpg"
+      "poster": "/assets/videos/home-main-20260617-poster.png"
     }
   },
   "nav": {

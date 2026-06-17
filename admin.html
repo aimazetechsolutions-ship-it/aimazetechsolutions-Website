@@ -217,7 +217,7 @@ body{font-family:'Inter',sans-serif;background:#0b0f1a;color:#e2e8f0;min-height:
         <div class="panel-section">
           <h3>Homepage Background Video</h3>
           <div class="form-row single"><div class="form-group"><label>Homepage Hero Video File Path</label><input type="text" id="hero-video" placeholder="/assets/videos/home-main-20260617.mp4"><p class="form-hint">Use the active homepage MP4 hero video file.</p></div></div>
-          <div class="form-row single"><div class="form-group"><label>Poster Image (shown while video loads)</label><input type="text" id="hero-poster" placeholder="/assets/videos/home-main-20260617-poster.jpg"></div></div>
+          <div class="form-row single"><div class="form-group"><label>Poster Image (shown while video loads)</label><input type="text" id="hero-poster" placeholder="/assets/videos/home-main-20260617-poster.png"></div></div>
           <div class="toggle-wrap">
             <label class="toggle"><input type="checkbox" id="hero-show-video" checked><span class="toggle-slider"></span></label>
             <span class="toggle-label">Show background video</span>
@@ -510,7 +510,7 @@ function populateForms(){
   setV('hero-cta2-text', h.secondaryCta||'');
   setV('hero-cta2-link', h.secondaryCtaLink||'odoo.html');
   setV('hero-video', h.videoMp4||h.videoUrl||'/assets/videos/home-main-20260617.mp4');
-  setV('hero-poster', h.videoPoster||'/assets/videos/home-main-20260617-poster.jpg');
+  setV('hero-poster', h.videoPoster||'/assets/videos/home-main-20260617-poster.png');
   document.getElementById('hero-show-video').checked = h.showVideo!==false;
   // Stats
   buildEditor('stats-editor', C.stats||[], renderStat);
@@ -622,7 +622,7 @@ function collectContent(){
 
   const mp4Path=gV('hero-video')||'/assets/videos/home-main-20260617.mp4';
   const existingHome=C.pageVideos&&C.pageVideos.home||{};
-  pageVideos.home={mp4:mp4Path,webm:'',poster:gV('hero-poster')||'/assets/videos/home-main-20260617-poster.jpg'};
+  pageVideos.home={mp4:mp4Path,webm:'',poster:gV('hero-poster')||'/assets/videos/home-main-20260617-poster.png'};
 
   return{
     site:{
@@ -646,7 +646,7 @@ function collectContent(){
       text:gV('hero-text'),primaryCta:gV('hero-cta1-text'),primaryCtaLink:gV('hero-cta1-link'),
       secondaryCta:gV('hero-cta2-text'),secondaryCtaLink:gV('hero-cta2-link'),
       videoUrl:mp4Path,videoMp4:mp4Path,videoWebm:'',
-      videoPoster:gV('hero-poster')||'/assets/videos/home-main-20260617-poster.jpg',
+      videoPoster:gV('hero-poster')||'/assets/videos/home-main-20260617-poster.png',
       showVideo:document.getElementById('hero-show-video').checked
     },
     stats, services,

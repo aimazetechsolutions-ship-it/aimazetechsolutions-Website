@@ -375,7 +375,7 @@
         cfg = Object.assign({
           mp4: h.videoMp4 || h.videoUrl || '/assets/videos/home-main-20260617.mp4',
           webm: h.videoWebm || '',
-          poster: h.videoPoster || '/assets/videos/home-main-20260617-poster.jpg'
+          poster: h.videoPoster || '/assets/videos/home-main-20260617-poster.png'
         }, cfg || {});
       }
       return {
