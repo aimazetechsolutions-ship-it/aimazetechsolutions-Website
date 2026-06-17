@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact Us | Free Odoo Consultation — AimAze Tech Solutions</title>
+<title>Contact | Free Odoo Consultation Dubai</title>
 <meta name="robots" content="index, follow">
 <meta name="description" content="Contact AimAze Tech Solutions in Lahore, Pakistan — book a free Odoo ERP consultation or discuss your digital transformation project. UAE, Pakistan and international inquiries welcome.">
-<meta property="og:title" content="Contact AimAze Tech Solutions | Free Odoo Consultation">
+<meta property="og:title" content="Contact | Free Odoo Consultation Dubai">
 <meta property="og:description" content="Contact AimAze Tech Solutions to book a free Odoo ERP consultation or discuss your software, automation or digital transformation project.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.aimazetechsolutions.com/contact.html">
+<meta property="og:site_name" content="AimAze Tech Solutions">
 <meta property="og:image" content="https://www.aimazetechsolutions.com/assets/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.aimazetechsolutions.com/contact.html">
@@ -46,12 +47,25 @@
 .info-card h4{font-family:var(--heading-font);font-size:16px;font-weight:700;margin-bottom:6px}
 .info-card p{color:#6d7789;font-size:14px;line-height:1.6}
 .info-card a{color:var(--secondary);font-weight:600}
+.locations-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.location-card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:24px;transition:border-color .2s}
+.location-card:hover{border-color:#00d4e8}
+.location-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.hq-badge{background:rgba(0,212,232,.1);border:1px solid rgba(0,212,232,.25);color:#00d4e8}
+.dev-badge{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:#a78bfa}
+.location-title{font-size:18px;font-weight:700;color:#e6edf3;margin-bottom:6px}
+.location-desc{font-size:12px;color:#8b949e;margin-bottom:14px;line-height:1.5}
+.location-address{font-style:normal;font-size:13px;color:#8b949e;line-height:1.7;margin-bottom:16px}
+.location-address strong{color:#e6edf3}
+.location-address a{color:#00d4e8;text-decoration:none}
+.map-embed{border-radius:10px;overflow:hidden}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-full{grid-column:span 1}}
+@media(max-width:768px){.locations-wrapper{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="whatsapp.css?v=23">
 <link rel="stylesheet" href="assets/css/whatsapp-float.css">
 <!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' 
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
   data-cf-beacon='{"token": "YOUR_CF_ANALYTICS_TOKEN"}'></script>
 <!-- TODO: Replace YOUR_CF_ANALYTICS_TOKEN with your token from Cloudflare Dashboard > Analytics > Web Analytics > Add Site --></head>
 <body>
@@ -73,21 +87,10 @@
       <h2>Send an inquiry</h2>
       <p>We typically respond within a few hours on business days.</p>
 
-      <!-- SUCCESS STATE -->
-      <div id="form-success" style="display:none;text-align:center;padding:40px 20px">
-        <div style="font-size:56px;margin-bottom:16px">✅</div>
-        <h3 style="font-family:var(--heading-font);font-size:22px;font-weight:800;margin-bottom:10px;color:#101729">Message Sent!</h3>
-        <p style="color:#6d7789;margin-bottom:24px">Thank you for reaching out. We'll get back to you within a few hours on business days.</p>
-        <button onclick="resetForm()" style="padding:12px 24px;border-radius:10px;border:none;background:var(--grad);color:#fff;font-weight:700;cursor:pointer;font-size:14px">Send Another Message</button>
-      </div>
-
-      <!-- FORM -->
-      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="display:block">
-        <input type="hidden" name="access_key" value="82feea8f-629e-4ec9-b948-5df4275e5d6e">
-        <input type="hidden" name="subject" value="New Website Inquiry — AimAze Tech Solutions">
-        <input type="hidden" name="from_name" value="AimAze Website">
-        <input type="hidden" name="replyto" value="info@aimazetechsolutions.com">
-        <input type="checkbox" name="botcheck" style="display:none">
+      <!-- TODO: Sign up at formspree.io → create form → replace YOUR_FORM_ID -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:block">
+        <input type="hidden" name="_subject" value="New Inquiry — AimAze Tech Solutions">
+        <input type="hidden" name="_next" value="https://www.aimazetechsolutions.com/contact.html?sent=true">
 
         <div class="form-grid">
           <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
@@ -114,8 +117,10 @@
           <span id="btn-text">Send Inquiry →</span>
           <span id="btn-loading" style="display:none">Sending...</span>
         </button>
-        <p id="form-error" style="display:none;text-align:center;margin-top:12px;font-size:14px;color:#ef4444;font-weight:600"></p>
       </form>
+      <div id="form-success" style="display:none; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:10px; padding:20px; color:#4ade80; text-align:center; margin-top:16px;">
+        ✅ <strong>Message received!</strong> We'll get back to you within a few hours.
+      </div>
     </div>
 
     <div class="contact-info reveal-right">
@@ -124,24 +129,45 @@
         <h4>Email</h4>
         <p><a href="mailto:info@aimazetechsolutions.com">info@aimazetechsolutions.com</a></p>
       </div>
-      <div class="info-card">
-        <div class="info-icon">📍</div>
-        <h4>Location</h4>
-        <address style="font-style:normal;color:#6d7789;font-size:14px;line-height:1.6">
-          <strong style="color:#101729">AimAze Tech Solutions LLC</strong><br>
-          Lahore, Pakistan<br>
-          Serving clients in UAE, Pakistan and internationally<br>
-          <a href="mailto:info@aimazetechsolutions.com">info@aimazetechsolutions.com</a>
-        </address>
-        <div class="map-embed" style="width:100%;height:300px;border-radius:12px;overflow:hidden;margin-top:20px;">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=74.2487%2C31.4604%2C74.4687%2C31.5804&amp;layer=mapnik&amp;marker=31.5204%2C74.3587"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="AimAze Tech Solutions — Lahore, Pakistan">
-          </iframe>
+      <div class="locations-wrapper">
+        <div class="location-card">
+          <div class="location-badge hq-badge">🏢 Headquarters</div>
+          <h3 class="location-title">Dubai, UAE</h3>
+          <p class="location-desc">Client operations, business development & project management</p>
+          <address class="location-address">
+            <strong>AimAze Tech Solutions LLC</strong><br>
+            Dubai, United Arab Emirates<br>
+            <a href="mailto:info@aimazetechsolutions.com">info@aimazetechsolutions.com</a>
+          </address>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.3!2d54.8978!3d25.0763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s"
+              width="100%" height="220" style="border:0;border-radius:10px;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="AimAze Tech Solutions — Dubai, UAE">
+            </iframe>
+          </div>
         </div>
-        <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&query=Lahore%2C%20Pakistan" target="_blank" rel="noopener">Open location in Google Maps →</a></p>
+        <div class="location-card">
+          <div class="location-badge dev-badge">💻 Development Office</div>
+          <h3 class="location-title">Lahore, Pakistan</h3>
+          <p class="location-desc">Technical delivery, Odoo development & custom software engineering</p>
+          <address class="location-address">
+            <strong>AimAze Tech Solutions</strong><br>
+            Lahore, Punjab, Pakistan<br>
+            <a href="mailto:info@aimazetechsolutions.com">info@aimazetechsolutions.com</a>
+          </address>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109534.4!2d74.2179!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe9765b0ab84!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s"
+              width="100%" height="220" style="border:0;border-radius:10px;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="AimAze Tech Solutions — Lahore, Pakistan">
+            </iframe>
+          </div>
+        </div>
       </div>
       <div class="info-card">
         <div class="info-icon">📞</div>
@@ -170,51 +196,12 @@
 </a>
 <script src="shared.js?v=31"></script>
 <script>
-const contactForm = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
-const btnText = document.getElementById('btn-text');
-const btnLoading = document.getElementById('btn-loading');
-const formError = document.getElementById('form-error');
-
-contactForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  formError.style.display = 'none';
-  submitBtn.disabled = true;
-  btnText.style.display = 'none';
-  btnLoading.style.display = 'inline';
-
-  try {
-    const formData = new FormData(contactForm);
-    const response = await fetch(contactForm.action, {
-      method: 'POST',
-      body: formData
-    });
-    const result = await response.json();
-
-    if (response.ok && result.success) {
-      contactForm.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-      contactForm.reset();
-    } else {
-      throw new Error(result.message || 'Unable to send inquiry.');
-    }
-  } catch (error) {
-    formError.textContent = 'Something went wrong. Please email us directly at info@aimazetechsolutions.com';
-    formError.style.display = 'block';
-  } finally {
-    submitBtn.disabled = false;
-    btnText.style.display = 'inline';
-    btnLoading.style.display = 'none';
-  }
-});
-
-function resetForm(){
-  document.getElementById('form-success').style.display = 'none';
-  contactForm.reset();
-  contactForm.style.display = 'block';
+if(window.location.search.includes('sent=true')){
+  var f=document.querySelector('form');
+  var s=document.getElementById('form-success');
+  if(f) f.style.display='none';
+  if(s) s.style.display='block';
 }
 </script>
 </body>
 </html>
-
-
