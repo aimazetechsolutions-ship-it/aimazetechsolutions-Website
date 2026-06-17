@@ -230,7 +230,7 @@
     footer.innerHTML=`
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/aimaze-logo-transparent.png" alt="AimAze">
+        <img src="/assets/aimaze-logo-transparent.png" alt="AimAze">
         <p>Odoo ERP, software, websites and digital transformation services for UAE and international businesses.</p>
         <div class="social-links" style="margin-top:20px">
           ${socialMarkup}
@@ -278,9 +278,9 @@
     const vdiv=document.createElement('div');
     vdiv.className='page-hero-video';
     vdiv.setAttribute('data-video-page',name);
-    vdiv.innerHTML=`<video autoplay muted loop playsinline preload="auto" poster="assets/videos/${name}-hq-poster.jpg">
-      <source src="assets/videos/${name}-hq.webm?v=29" type="video/webm">
-      <source src="assets/videos/${name}.mp4?v=29" type="video/mp4">
+    vdiv.innerHTML=`<video autoplay muted loop playsinline preload="auto" poster="/assets/videos/${name}-hq-poster.jpg">
+      <source src="/assets/videos/${name}-hq.webm?v=29" type="video/webm">
+      <source src="/assets/videos/${name}.mp4?v=29" type="video/mp4">
     </video>`;
     return vdiv;
   }
@@ -373,9 +373,9 @@
       if(typeof cfg === 'string') cfg = {mp4: cfg};
       if(finalPage === 'home'){
         cfg = Object.assign({
-          mp4: h.videoMp4 || h.videoUrl || 'assets/videos/home.mp4',
-          webm: h.videoWebm || 'assets/videos/home-hq.webm',
-          poster: h.videoPoster || 'assets/videos/home-hq-poster.jpg'
+          mp4: h.videoMp4 || h.videoUrl || '/assets/videos/home.mp4',
+          webm: h.videoWebm || '/assets/videos/home-hq.webm',
+          poster: h.videoPoster || '/assets/videos/home-hq-poster.jpg'
         }, cfg || {});
       }
       return {
