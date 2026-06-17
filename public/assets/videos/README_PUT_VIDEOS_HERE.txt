@@ -1,7 +1,7 @@
 Put optimized MP4 background videos in this folder.
 
 Required filenames by default:
-- home.mp4
+- home-main-20260617.mp4
 - about.mp4
 - services.mp4
 - odoo.mp4
@@ -11,7 +11,7 @@ Required filenames by default:
 - contact.mp4
 
 Optional poster images:
-- home-poster.jpg
+- home-main-20260617-poster.jpg
 - about-poster.jpg
 - services-poster.jpg
 - odoo-poster.jpg

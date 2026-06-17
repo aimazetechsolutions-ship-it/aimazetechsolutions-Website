@@ -373,9 +373,9 @@
       if(typeof cfg === 'string') cfg = {mp4: cfg};
       if(finalPage === 'home'){
         cfg = Object.assign({
-          mp4: h.videoMp4 || h.videoUrl || '/assets/videos/home.mp4',
-          webm: h.videoWebm || '/assets/videos/home-hq.webm',
-          poster: h.videoPoster || '/assets/videos/home-hq-poster.jpg'
+          mp4: h.videoMp4 || h.videoUrl || '/assets/videos/home-main-20260617.mp4',
+          webm: h.videoWebm || '',
+          poster: h.videoPoster || '/assets/videos/home-main-20260617-poster.jpg'
         }, cfg || {});
       }
       return {
