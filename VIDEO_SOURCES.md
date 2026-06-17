@@ -4,7 +4,7 @@ These hero backgrounds use optimized stock video loops. The homepage uses a 1080
 
 | Page | Site asset | Source |
 | --- | --- | --- |
-| Home | `assets/videos/home.mp4` | https://www.pexels.com/video/people-in-a-meeting-3255275/ |
+| Home | `assets/videos/home-main-20260617.mp4` | https://www.pexels.com/video/people-in-a-meeting-3255275/ |
 | About | `assets/videos/about-hq.webm` | https://mixkit.co/free-stock-video/business-people-at-work-meeting-4809/ |
 | Services | `assets/videos/services-hq.webm` | https://mixkit.co/free-stock-video/programmer-working-with-codes-on-a-computer-41637/ |
 | Odoo ERP | `assets/videos/odoo-hq.webm` | https://mixkit.co/free-stock-video/reflection-of-a-screen-in-glasses-221/ |

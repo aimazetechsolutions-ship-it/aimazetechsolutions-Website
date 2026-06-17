@@ -20,8 +20,8 @@
 <link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="icon" href="/assets/aimaze-logo-transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="video" href="/assets/videos/home.mp4?v=30" type="video/mp4">
-<link rel="preload" as="image" href="/assets/videos/home-hq-poster.jpg?v=31">
+<link rel="preload" as="video" href="/assets/videos/home-main-20260617.mp4" type="video/mp4">
+<link rel="preload" as="image" href="/assets/videos/home-main-20260617-poster.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
 <style>
 /* ── RESET & BASE ── */
@@ -718,8 +718,8 @@ img{max-width:100%;display:block}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-video" id="hero-video-wrap">
-    <video id="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="/assets/videos/home-hq-poster.jpg?v=31">
-      <source id="hero-bg-mp4" src="/assets/videos/home.mp4?v=30" type="video/mp4">
+    <video id="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="/assets/videos/home-main-20260617-poster.jpg">
+      <source id="hero-bg-mp4" src="/assets/videos/home-main-20260617.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -1012,10 +1012,10 @@ function applyHero(h){
     const mp4=document.getElementById('hero-bg-mp4');
     const webm=document.getElementById('hero-bg-webm');
     if(video){
-      const versionAsset=(src)=>src ? src + (src.includes('?') ? '&' : '?') + 'v=30' : '';
-      const mp4Src=versionAsset(h.videoMp4||h.videoUrl||'/assets/videos/home.mp4');
+      const versionAsset=(src)=>src || '';
+      const mp4Src=versionAsset(h.videoMp4||h.videoUrl||'/assets/videos/home-main-20260617.mp4');
       const webmSrc=versionAsset(h.videoWebm||'');
-      const poster=h.videoPoster||'/assets/videos/home-hq-poster.jpg?v=31';
+      const poster=h.videoPoster||'/assets/videos/home-main-20260617-poster.jpg';
       let changed=false;
       if(mp4 && mp4.getAttribute('src')!==mp4Src){mp4.src=mp4Src;changed=true;}
       if(webm){

@@ -39,10 +39,10 @@
     "primaryCtaLink": "https://calendly.com/aimazetechsolutions/consultation",
     "secondaryCta": "View Our Services",
     "secondaryCtaLink": "/services.html",
-    "videoUrl": "/assets/videos/home.mp4",
-    "videoMp4": "/assets/videos/home.mp4",
+    "videoUrl": "/assets/videos/home-main-20260617.mp4",
+    "videoMp4": "/assets/videos/home-main-20260617.mp4",
     "videoWebm": "",
-    "videoPoster": "/assets/videos/home-hq-poster.jpg?v=31",
+    "videoPoster": "/assets/videos/home-main-20260617-poster.jpg",
     "showVideo": true
   },
   "stats": [
@@ -227,9 +227,9 @@
       "poster": "assets/videos/contact-hq-poster.jpg"
     },
     "home": {
-      "mp4": "/assets/videos/home.mp4",
+      "mp4": "/assets/videos/home-main-20260617.mp4",
       "webm": "",
-      "poster": "/assets/videos/home-hq-poster.jpg?v=31"
+      "poster": "/assets/videos/home-main-20260617-poster.jpg"
     }
   },
   "nav": {
