@@ -47,26 +47,31 @@
   },
   "stats": [
     {
-      "number": "25",
-      "suffix": "+",
-      "label": "Projects Delivered"
+      "number": "3+",
+      "suffix": "",
+      "label": "Years in Business",
+      "icon": "calendar"
     },
     {
-      "number": "10",
-      "suffix": "+",
-      "label": "Years Experience"
+      "number": "15+",
+      "suffix": "",
+      "label": "Projects Delivered",
+      "icon": "checkmark"
     },
     {
-      "number": "100",
-      "suffix": "%",
-      "label": "Client Satisfaction"
+      "number": "10+",
+      "suffix": "",
+      "label": "Happy Clients",
+      "icon": "users"
     },
     {
-      "number": "15",
-      "suffix": "+",
-      "label": "Odoo Modules Expertise"
+      "number": "5",
+      "suffix": "",
+      "label": "Industries Served",
+      "icon": "briefcase"
     }
   ],
+  "_statsTodo": "TODO: Ahtesham — update these conservative placeholder stats with real years in business, total projects, client count, and industries before final publishing.",
   "services": [
     {
       "icon": "📊",

@@ -12,8 +12,11 @@
 <meta property="og:image" content="https://www.aimazetechsolutions.com/assets/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.aimazetechsolutions.com/odoo.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="icon" href="assets/aimaze-logo-transparent.png">
-<link rel="stylesheet" href="site.css?v=18">
+<link rel="stylesheet" href="site.css?v=19">
 <style>
 .modules-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .module-card{padding:22px;border-radius:16px;border:1px solid #e8f0f7;background:#fff;text-align:center;transition:.3s;cursor:default}
@@ -253,6 +256,34 @@
   </div>
 </div>
 
+<!-- LEAD MAGNET SECTION -->
+<section class="lead-magnet-section" id="lead-magnet">
+  <div class="container">
+    <div class="lead-magnet-card reveal">
+      <div class="lead-magnet-icon">📋</div>
+      <div class="lead-magnet-content">
+        <h3>Free Download: UAE Business ERP Readiness Checklist</h3>
+        <p>10 signs your UAE business needs an ERP upgrade - plus a practical migration checklist. Used by business owners across Dubai and the GCC.</p>
+      </div>
+      <form class="lead-magnet-form" action="https://api.web3forms.com/submit" method="POST" id="leadMagnetForm">
+        <!-- TODO: Create the actual checklist PDF and connect the follow-up delivery email or automation. -->
+        <input type="hidden" name="access_key" value="82feea8f-629e-4ec9-b948-5df4275e5d6e">
+        <input type="hidden" name="subject" value="Lead Magnet Download - AimAze Odoo Page">
+        <input type="hidden" name="from_name" value="AimAze Website">
+        <input type="hidden" name="source" value="odoo-lead-magnet-banner">
+        <div class="lead-form-row">
+          <input type="email" name="email" placeholder="your@email.com" required class="lead-email-input" aria-label="Your email address">
+          <button type="submit" class="lead-submit-btn">Get Free Checklist →</button>
+        </div>
+        <p class="lead-privacy">No spam. Unsubscribe anytime. We respect your privacy.</p>
+      </form>
+      <div class="lead-success" id="leadSuccess" style="display:none;">
+        ✅ <strong>Thank you!</strong> We received your request and will send the checklist to your email.
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer" id="footer"><div id="footer-inner"></div></footer>
 <!-- TODO: Replace with your actual UAE WhatsApp number -->
 <a class="aimaze-whatsapp-float" href="https://wa.me/971000000000?text=Hello%20AimAze%2C%20I%27d%20like%20to%20discuss%20a%20project" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener">
@@ -264,6 +295,22 @@ function toggleFaq(el){
   const item=el.parentElement;
   item.classList.toggle('open');
 }
+</script>
+<script>
+(function(){
+  var form=document.getElementById('leadMagnetForm');
+  var success=document.getElementById('leadSuccess');
+  if(!form)return;
+  if(window.location.search.includes('lead=sent') && success){
+    success.style.display='block';
+    form.style.display='none';
+  }
+  var redirect=document.createElement('input');
+  redirect.type='hidden';
+  redirect.name='redirect';
+  redirect.value=window.location.href.split('?')[0]+'?lead=sent';
+  form.appendChild(redirect);
+})();
 </script>
 </body>
 </html>

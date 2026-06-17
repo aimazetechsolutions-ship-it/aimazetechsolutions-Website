@@ -12,26 +12,11 @@
 <meta property="og:image" content="https://www.aimazetechsolutions.com/assets/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.aimazetechsolutions.com/portfolio.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="icon" href="assets/aimaze-logo-transparent.png">
-<link rel="stylesheet" href="site.css?v=18">
-<style>
-.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.portfolio-card{border-radius:26px;overflow:hidden;border:1px solid #e8f0f7;background:#fff;box-shadow:0 20px 60px rgba(16,23,41,.06);transition:.35s;display:flex;flex-direction:column}
-.portfolio-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(39,199,215,.3)}
-.portfolio-card.wide{grid-column:span 2}
-.p-thumb{height:230px;display:flex;align-items:center;justify-content:center;font-size:72px;position:relative}
-.p-badge{position:absolute;top:18px;right:18px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2)}
-.p-body{padding:32px;flex:1;display:flex;flex-direction:column}
-.p-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(39,199,215,.1);color:var(--secondary);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-.p-body h3{font-family:var(--heading-font);font-size:22px;font-weight:800;line-height:1.25;margin-bottom:12px}
-.p-body p{color:#6d7789;font-size:15px;line-height:1.65;flex:1}
-.p-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.pill{padding:5px 12px;border-radius:999px;border:1px solid #e8f0f7;font-size:12px;font-weight:700;color:#6d7789}
-.p-results{display:flex;gap:28px;margin-top:20px;padding-top:20px;border-top:1px solid #e8f0f7}
-.result-item strong{display:block;font-family:var(--heading-font);font-size:24px;font-weight:800;color:var(--secondary)}
-.result-item span{font-size:12px;color:#a0aec0;font-weight:600}
-@media(max-width:900px){.portfolio-grid{grid-template-columns:1fr}.portfolio-card.wide{grid-column:span 1}}
-</style>
+<link rel="stylesheet" href="site.css?v=19">
 <link rel="stylesheet" href="whatsapp.css?v=23">
 <link rel="stylesheet" href="assets/css/whatsapp-float.css">
 <!-- Cloudflare Web Analytics -->
@@ -55,75 +40,119 @@
   </div>
 </section>
 
-<section class="section light">
-  <div class="portfolio-grid">
-    <article class="portfolio-card wide reveal">
-      <div class="p-thumb" style="background:linear-gradient(135deg,#27c7d7,#3f83df,#7c3aed)">📊<span class="p-badge">Odoo ERP</span></div>
-      <div class="p-body">
-        <span class="p-tag">Trading & Distribution</span>
-        <h3>Full Odoo ERP Implementation — UAE Trading Company</h3>
-        <p>End-to-end Odoo implementation covering CRM, sales, purchase, inventory, accounting and HR. Migrated from manual spreadsheets to a fully integrated system with live management dashboards and UAE VAT-compliant invoicing.</p>
-        <div class="p-pills"><span class="pill">Odoo CRM</span><span class="pill">Inventory</span><span class="pill">Accounting</span><span class="pill">HR</span><span class="pill">VAT</span><span class="pill">Data Migration</span></div>
-        <div class="p-results">
-          <div class="result-item"><strong>100%</strong><span>Manual process eliminated</span></div>
-          <div class="result-item"><strong>3 weeks</strong><span>Go-live timeline</span></div>
-          <div class="result-item"><strong>5 modules</strong><span>Integrated</span></div>
+<!-- PORTFOLIO SECTION -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-badge">Our Work</span>
+      <h2 class="section-title">Projects We're Proud Of</h2>
+      <p class="section-sub">From ERP implementations to full digital transformation - here's what we've built for real businesses.</p>
+    </div>
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="odoo">Odoo ERP</button>
+      <button class="filter-btn" data-filter="web">Web & Digital</button>
+      <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="case-card reveal delay-1" data-category="odoo">
+        <div class="case-header">
+          <div class="case-industry-tag">Trading & Distribution</div>
+          <div class="case-modules">
+            <span class="module-chip">Inventory</span>
+            <span class="module-chip">Accounting</span>
+            <span class="module-chip">Purchase</span>
+            <span class="module-chip">VAT</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3 class="case-title">
+            <!-- TODO: Replace with real company name or keep anonymised -->
+            UAE Trading Company - Full Odoo Implementation
+          </h3>
+          <p class="case-desc">
+            <!-- TODO: Replace with real project details -->
+            A Dubai-based trading company with 35 staff running on disconnected spreadsheets and WhatsApp. We implemented Odoo 17 Community covering inventory, purchase orders, customer invoicing, and UAE VAT-compliant accounting. Went live in 6 weeks.
+          </p>
+          <div class="case-metrics">
+            <div class="metric"><span class="metric-num">6</span><span class="metric-label">Weeks to Go-Live</span></div>
+            <div class="metric"><span class="metric-num">35</span><span class="metric-label">Staff Onboarded</span></div>
+            <div class="metric"><span class="metric-num">60%</span><span class="metric-label">Faster Invoicing</span></div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <div class="case-meta"><span>Dubai, UAE</span><span>2025</span></div>
+          <!-- TODO: Uncomment and add link when you have a detailed case study page
+          <a href="/case-study-1.html" class="case-link">Read Full Story →</a>
+          -->
         </div>
       </div>
-    </article>
-    <article class="portfolio-card reveal delay-1">
-      <div class="p-thumb" style="background:linear-gradient(135deg,#ff8847,#7c3aed)">💰<span class="p-badge">Finance</span></div>
-      <div class="p-body">
-        <span class="p-tag">Hospitality</span>
-        <h3>Hotel Operations & Finance Dashboard Automation</h3>
-        <p>Custom Odoo dashboard for room revenue, F&B sales, occupancy, receivables, supplier costs and department-level performance reporting for hotel management.</p>
-        <div class="p-pills"><span class="pill">Odoo Accounting</span><span class="pill">Custom Dashboard</span><span class="pill">Automation</span></div>
-        <div class="p-results">
-          <div class="result-item"><strong>Zero</strong><span>Manual reporting</span></div>
-          <div class="result-item"><strong>Daily</strong><span>Live KPI visibility</span></div>
+      <div class="case-card reveal delay-2" data-category="odoo">
+        <div class="case-header">
+          <div class="case-industry-tag">Real Estate & Brokerage</div>
+          <div class="case-modules">
+            <span class="module-chip">CRM</span>
+            <span class="module-chip">Sales</span>
+            <span class="module-chip">Contacts</span>
+            <span class="module-chip">Reporting</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3 class="case-title">
+            <!-- TODO: Replace with real company name or keep anonymised -->
+            Real Estate Brokerage - CRM & Sales Pipeline
+          </h3>
+          <p class="case-desc">
+            <!-- TODO: Replace with real project details -->
+            A Dubai real estate brokerage needed a structured CRM to manage property leads, broker commissions, and client follow-ups. We configured Odoo CRM with custom pipeline stages, automated follow-up sequences, and a management dashboard.
+          </p>
+          <div class="case-metrics">
+            <div class="metric"><span class="metric-num">3x</span><span class="metric-label">Lead Visibility</span></div>
+            <div class="metric"><span class="metric-num">100%</span><span class="metric-label">Pipeline Tracked</span></div>
+            <div class="metric"><span class="metric-num">4</span><span class="metric-label">Week Delivery</span></div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <div class="case-meta"><span>Dubai, UAE</span><span>2025</span></div>
         </div>
       </div>
-    </article>
-    <article class="portfolio-card reveal delay-2">
-      <div class="p-thumb" style="background:linear-gradient(135deg,#3f83df,#27c7d7)">🌐<span class="p-badge">Website</span></div>
-      <div class="p-body">
-        <span class="p-tag">Real Estate</span>
-        <h3>Business Website & CRM Integration — Real Estate Agency</h3>
-        <p>Professional website with property listings, lead capture forms and direct Odoo CRM integration. Every inquiry auto-creates a CRM lead with source tracking.</p>
-        <div class="p-pills"><span class="pill">Web Development</span><span class="pill">Odoo CRM</span><span class="pill">Lead Capture</span></div>
-        <div class="p-results">
-          <div class="result-item"><strong>100%</strong><span>Leads in CRM</span></div>
-          <div class="result-item"><strong>Auto</strong><span>Follow-up workflows</span></div>
+      <div class="case-card reveal delay-3" data-category="hospitality">
+        <div class="case-header">
+          <div class="case-industry-tag">Hospitality & Laundry</div>
+          <div class="case-modules">
+            <span class="module-chip">Operations</span>
+            <span class="module-chip">Inventory</span>
+            <span class="module-chip">Customer Portal</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3 class="case-title">
+            <!-- TODO: Replace with real company name or keep anonymised -->
+            GoldVerse Laundry - Operations ERP
+          </h3>
+          <p class="case-desc">
+            <!-- TODO: Replace with real project details -->
+            Custom Odoo ERP for a hospitality-grade laundry service covering job tracking, garment tagging, customer portal access, delivery scheduling, and billing - replacing a fully manual paper-based workflow.
+          </p>
+          <div class="case-metrics">
+            <div class="metric"><span class="metric-num">0</span><span class="metric-label">Paper Orders</span></div>
+            <div class="metric"><span class="metric-num">100%</span><span class="metric-label">Digital Tracking</span></div>
+            <div class="metric"><span class="metric-num">Custom</span><span class="metric-label">Module Built</span></div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <div class="case-meta"><span>UAE</span><span>2025</span></div>
         </div>
       </div>
-    </article>
-    <article class="portfolio-card reveal delay-1">
-      <div class="p-thumb" style="background:linear-gradient(135deg,#7c3aed,#ff8847)">✈️<span class="p-badge">Travel</span></div>
-      <div class="p-body">
-        <span class="p-tag">Travel & Tourism</span>
-        <h3>Odoo CRM & Sales Pipeline — Travel Agency</h3>
-        <p>Custom CRM pipeline for travel package sales with quotation templates, follow-up automation, supplier cost tracking and profit per booking visibility.</p>
-        <div class="p-pills"><span class="pill">Odoo CRM</span><span class="pill">Custom Quotations</span><span class="pill">Profit Tracking</span></div>
-        <div class="p-results">
-          <div class="result-item"><strong>40%</strong><span>Faster quoting</span></div>
-          <div class="result-item"><strong>Full</strong><span>Pipeline visibility</span></div>
+      <div class="case-card coming-soon reveal delay-4">
+        <div class="coming-soon-inner">
+          <div class="coming-soon-icon">🚀</div>
+          <h3>More Projects Coming Soon</h3>
+          <p>We're currently delivering new Odoo implementations and digital transformation projects across the UAE. Case studies will be published here as projects complete.</p>
+          <a href="/contact.html" class="btn btn-primary" style="display:inline-flex;margin-top:16px;">Start Your Project →</a>
         </div>
       </div>
-    </article>
-    <article class="portfolio-card wide reveal">
-      <div class="p-thumb" style="background:linear-gradient(135deg,#3f83df,#7c3aed,#ff8847);height:160px">🔄<span class="p-badge">Automation</span></div>
-      <div class="p-body">
-        <span class="p-tag">Retail & E-commerce</span>
-        <h3>Workflow Automation & Approval Flows — Retail Group</h3>
-        <p>Automated purchase approval workflows, low-stock alerts, reorder rules and supplier payment reminders. Reduced manual follow-up across procurement and finance teams significantly.</p>
-        <div class="p-pills"><span class="pill">Odoo Inventory</span><span class="pill">Purchase</span><span class="pill">Approval Flows</span><span class="pill">Automation</span></div>
-        <div class="p-results">
-          <div class="result-item"><strong>Zero</strong><span>Missed reorders</span></div>
-          <div class="result-item"><strong>Auto</strong><span>Approval routing</span></div>
-          <div class="result-item"><strong>Hours saved</strong><span>Per week</span></div>
-        </div>
-      </div>
-    </article>
+    </div>
   </div>
 </section>
 
@@ -138,5 +167,17 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .6C7.5.6.7 7.4.7 15.8c0 2.7.7 5.3 2 7.5L.4 31.4l8.4-2.2c2.1 1.1 4.6 1.8 7.2 1.8 8.5 0 15.3-6.8 15.3-15.2S24.5.6 16 .6Zm0 27.7c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-5 1.3 1.3-4.9-.3-.5c-1.2-1.9-1.8-4.1-1.8-6.4C3.3 8.8 9 3.1 16 3.1s12.7 5.7 12.7 12.7S23 28.3 16 28.3Zm7-9.4c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.8.2-.2.4-.9 1.3-1.1 1.6-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.8c.2.3 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5Z"/></svg>
 </a>
 <script src="shared.js?v=31"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.case-card:not(.coming-soon)').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'flex' : 'none';
+    });
+  });
+});
+</script>
 </body>
 </html>
