@@ -26,7 +26,7 @@ img{max-width:100%;display:block}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,5vw,80px);transition:all .4s ease}
 .navbar.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:14px clamp(20px,5vw,80px);box-shadow:0 8px 40px rgba(16,23,41,.08)}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{height:44px;width:auto;object-fit:contain}
+.brand img{height:60px;width:auto;object-fit:contain}
 .brand-name{font-family:var(--heading-font);font-size:18px;font-weight:800;color:#fff;transition:color .3s}
 .navbar.scrolled .brand-name{color:var(--dark)}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -208,7 +208,7 @@ img{max-width:100%;display:block}
   .navbar{padding:12px 16px!important;min-height:74px!important}
   .navbar.scrolled{padding:10px 16px!important}
   .brand{min-width:0!important;flex:1 1 auto!important;gap:8px!important}
-  .brand img{height:38px!important;flex:0 0 auto!important}
+  .brand img{height:46px!important;flex:0 0 auto!important}
   .brand-name{max-width:calc(100vw - 118px)!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;font-size:15px!important;line-height:1.1!important}
   .hamburger{flex:0 0 40px!important}
   .nav-links{top:74px!important;left:12px!important;right:12px!important;width:auto!important}
