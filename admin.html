@@ -332,8 +332,8 @@ body{font-family:'Inter',sans-serif;background:#0b0f1a;color:#e2e8f0;min-height:
         <div class="panel-section">
           <h3>Font Sizes (px)</h3>
           <div class="form-row">
-            <div class="form-group"><label>Base Font</label><input type="number" id="base-font-size" min="14" max="22" placeholder="17"><p class="form-hint">Controls general body text across the site.</p></div>
-            <div class="form-group"><label>Navigation Font</label><input type="number" id="nav-font-size" min="12" max="22" placeholder="16"><p class="form-hint">Controls menu and header link size.</p></div>
+            <div class="form-group"><label>Base Font</label><input type="number" id="base-font-size" min="14" max="22" placeholder="18"><p class="form-hint">Controls general body text across the site.</p></div>
+            <div class="form-group"><label>Navigation Font</label><input type="number" id="nav-font-size" min="12" max="22" placeholder="17"><p class="form-hint">Controls menu and header link size.</p></div>
           </div>
           <div class="form-row triple">
             <div class="form-group"><label>Hero Heading</label><input type="number" id="hero-h-size" min="28" max="100" placeholder="48"><p class="form-hint">Default: 48px</p></div>
@@ -538,8 +538,8 @@ function populateForms(){
   setColor('dark', t.darkColor||'#101729');
   setV('heading-font', t.headingFont||'Syne');
   setV('body-font', t.bodyFont||'Inter');
-  setV('base-font-size', t.baseFontSize||'17');
-  setV('nav-font-size', t.navFontSize||'16');
+  setV('base-font-size', t.baseFontSize||'18');
+  setV('nav-font-size', t.navFontSize||'17');
   setV('hero-h-size', t.heroHeadingSize||'48');
   setV('hero-sub-size', t.heroSubSize||'34');
   setV('hero-text-size', t.heroTextSize||'17');
@@ -640,11 +640,11 @@ function collectContent(){
       primaryColor:gV('c-primary-t'),secondaryColor:gV('c-secondary-t'),
       accentColor:gV('c-accent-t'),darkColor:gV('c-dark-t'),
       headingFont:gV('heading-font'),bodyFont:gV('body-font'),
-      baseFontSize:gV('base-font-size')||'17',
-      heroHeadingSize:gV('hero-h-size')||'52',heroSubSize:gV('hero-sub-size')||'36',
-      heroTextSize:gV('hero-text-size')||'18',sectionHeadingSize:gV('section-h-size')||'42',
-      cardTitleSize:gV('card-title-size')||'20',cardTextSize:gV('card-text-size')||'16',
-      navFontSize:gV('nav-font-size')||'16',heroHeadingWeight:gV('hero-h-weight')||'700',
+      baseFontSize:gV('base-font-size')||'18',
+      heroHeadingSize:gV('hero-h-size')||'58',heroSubSize:gV('hero-sub-size')||'38',
+      heroTextSize:gV('hero-text-size')||'19',sectionHeadingSize:gV('section-h-size')||'46',
+      cardTitleSize:gV('card-title-size')||'22',cardTextSize:gV('card-text-size')||'17',
+      navFontSize:gV('nav-font-size')||'17',heroHeadingWeight:gV('hero-h-weight')||'700',
       sectionHeadingWeight:gV('section-h-weight')||'800',cardTitleWeight:'700'
     },
     hero:{
