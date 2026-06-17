@@ -38,15 +38,17 @@
   // ── NAV ──
   function normalizePageUrl(url){
     const parsed=new URL(url, window.location.origin);
-    const file=(parsed.pathname.split('/').pop()||'index.html').toLowerCase();
-    return file || 'index.html';
+    let path=parsed.pathname.toLowerCase().replace(/\/+$/,'');
+    let file=(path.split('/').pop()||'index').replace(/\.html$/,'');
+    if(!file || file==='index') return 'index';
+    return file;
   }
 
   function markActiveNav(){
     const current=normalizePageUrl(window.location.href);
     document.querySelectorAll('#nav-links a').forEach(link=>{
       const target=normalizePageUrl(link.getAttribute('href')||'');
-      const isActive=(current===target) || (current==='' && target==='index.html');
+      const isActive=current===target;
       link.classList.toggle('is-active',isActive);
       if(isActive) link.setAttribute('aria-current','page');
       else link.removeAttribute('aria-current');

@@ -35,13 +35,15 @@ img{max-width:100%;display:block}
 .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff}
 .navbar.scrolled .nav-links a:hover{background:#f0f9ff;color:var(--secondary)}
 .nav-links a.is-active:not(.nav-cta){
-  background:rgba(255,255,255,.2);
-  color:#fff;
-  box-shadow:inset 0 -2px 0 var(--primary);
+  background:linear-gradient(135deg,var(--primary),var(--secondary),#7c3aed)!important;
+  color:#fff!important;
+  box-shadow:0 12px 28px rgba(39,199,215,.28);
+  text-shadow:0 1px 8px rgba(0,0,0,.18);
 }
 .navbar.scrolled .nav-links a.is-active:not(.nav-cta){
-  background:#eefbff;
-  color:var(--secondary);
+  background:linear-gradient(135deg,var(--primary),var(--secondary),#7c3aed)!important;
+  color:#fff!important;
+  box-shadow:0 10px 24px rgba(39,199,215,.22);
 }
 .nav-links .nav-cta.is-active{
   background:var(--grad)!important;
