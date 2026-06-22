@@ -1,3 +1,8 @@
+# MAINTENANCE MODE — remove the 2 active lines below to restore normal routing
+/favicon.svg  /favicon.svg  200
+/*  /maintenance.html  200!
+# END MAINTENANCE MODE
+
 /home / 301!
 /home/ / 301!
 /home/* /:splat 301!
